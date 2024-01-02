@@ -82,11 +82,12 @@ Affiche des informations sur les données actuellement visibles dans le tableau,
 
 - `totalLength={data.length}`: Nombre total de lignes.
 - `length={length}`: Nombre de lignes affichées par page.
+- `page={page}` : Page actuellement sélectionnée.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableInfo length={length} totalLength={data.length} />
+<TableInfo length={length} totalLength={data.length} page={page} />
 ```
 
 ### TablePaginate
@@ -95,18 +96,14 @@ Fournit des contrôles de pagination pour naviguer entre les pages de données d
 
 #### Props
 
-- `onPageChange`: Fonction appelée lorsqu'une nouvelle page est sélectionnée.
-- `totalPages`: Nombre total de pages.
-- `currentPage`: Page actuellement sélectionnée.
+- `length={length}`: Nombre de lignes affichées par page.
+- `totalLength={data.length}`: Nombre total de data.
+- `setPage={setPage}`: Permet de changer la Page actuellement sélectionnée.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TablePaginate
-  onPageChange={handlePageChange}
-  totalPages={totalPages}
-  currentPage={currentPage}
-/>
+<TablePaginate length={length} totalLength={data.length} setPage={setPage} />
 ```
 
 ### TableHead

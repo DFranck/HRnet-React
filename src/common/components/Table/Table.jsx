@@ -7,9 +7,9 @@ import { TableHead } from "./TableHead/TableHead";
 import { TableBody } from "./TableBody/TableBody";
 import "./table.css";
 export const Table = ({ data, width }) => {
-  console.log(data);
   const [length, setLength] = useState(10);
-  console.log(length);
+  const [page, setPage] = useState(1);
+  console.log(page);
   return (
     <section className="table" style={{ width: width }}>
       <header className="table-header">
@@ -21,8 +21,12 @@ export const Table = ({ data, width }) => {
         <TableBody />
       </table>
       <footer className="table-footer">
-        <TableInfo length={length} totalLength={data.length} />
-        <TablePaginate />
+        <TableInfo length={length} totalLength={data.length} page={page} />
+        <TablePaginate
+          length={length}
+          totalLength={data.length}
+          setPage={setPage}
+        />
       </footer>
     </section>
   );
