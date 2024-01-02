@@ -21,7 +21,7 @@ export const Table = ({ data, width }) => {
         <TableBody />
       </table>
       <footer className="table-footer">
-        <TableInfo />
+        <TableInfo length={length} totalLength={data.length} />
         <TablePaginate />
       </footer>
     </section>

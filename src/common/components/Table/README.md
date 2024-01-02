@@ -57,7 +57,7 @@ Ce sous-composant permet à l'utilisateur de choisir le nombre de lignes à affi
 #### Exemple d'utilisation
 
 ```jsx
-<TableLength setLength={setLength} />
+<TableLenght setLength={setLength} />
 ```
 
 ### TableFilter
@@ -80,14 +80,13 @@ Affiche des informations sur les données actuellement visibles dans le tableau,
 
 #### Props
 
-- `total`: Nombre total de lignes.
-- `current`: Nombre de lignes affichées.
-- `length`: Nombre de lignes affichées par page.
+- `totalLength={data.length}`: Nombre total de lignes.
+- `length={length}`: Nombre de lignes affichées par page.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableInfo />
+<TableInfo length={length} totalLength={data.length} />
 ```
 
 ### TablePaginate

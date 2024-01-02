@@ -1,7 +1,8 @@
-export const TableInfo = () => {
+export const TableInfo = ({ length, totalLength }) => {
   return (
-    <div>
-      <h1>Table Info</h1>
-    </div>
+    <p>
+      Showing 1 to {length < totalLength ? length : totalLength} of{" "}
+      {totalLength} entries{" "}
+    </p>
   );
 };
