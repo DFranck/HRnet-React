@@ -52,12 +52,12 @@ Ce sous-composant permet à l'utilisateur de choisir le nombre de lignes à affi
 
 #### Props
 
-- `onChange`: Fonction appelée lors de la modification du nombre de lignes à afficher.
+- `setLength={setLength}`: Changement du state lors de la modification du nombre de lignes à afficher.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableLength onChange={handleLengthChange} />
+<TableLength setLength={setLength} />
 ```
 
 ### TableFilter
