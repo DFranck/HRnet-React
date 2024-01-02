@@ -1,7 +1,7 @@
 export const TableHead = () => {
   return (
     <thead>
-      <tr>TableHead</tr>
+      <tr></tr>
     </thead>
   );
 };

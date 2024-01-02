@@ -34,6 +34,10 @@ Pour utiliser le composant `Table`, passez les données sous forme d'un tableau 
 ]
 ```
 
+#### Autre Props
+
+- `width`: Largeur du tableau.
+
 #### Exemple d'utilisation
 
 ```jsx

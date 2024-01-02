@@ -4,22 +4,23 @@ import { TableInfo } from "./TableInfo/TableInfo";
 import { TablePaginate } from "./TablePaginate/TablePaginate";
 import { TableHead } from "./TableHead/TableHead";
 import { TableBody } from "./TableBody/TableBody";
-export const Table = ({ data }) => {
+import "./table.css";
+export const Table = ({ data, width }) => {
   console.log(data);
   return (
-    <>
-      <>
+    <section className="table" style={{ width: width }}>
+      <header className="table-header">
         <TableLenght />
         <TableFilter />
-      </>
+      </header>
       <table>
         <TableHead />
         <TableBody />
       </table>
-      <>
+      <footer className="table-footer">
         <TableInfo />
         <TablePaginate />
-      </>
-    </>
+      </footer>
+    </section>
   );
 };

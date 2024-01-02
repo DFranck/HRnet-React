@@ -1,7 +1,7 @@
 export const TableBody = () => {
   return (
     <tbody>
-      <tr>TableBody</tr>
+      <tr></tr>
     </tbody>
   );
 };

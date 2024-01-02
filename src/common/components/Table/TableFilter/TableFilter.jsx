@@ -1,7 +1,8 @@
 export const TableFilter = () => {
   return (
-    <div>
+    <label>
+      Search:
       <input type="text" placeholder="Search..." />
-    </div>
+    </label>
   );
 };
