@@ -14,15 +14,26 @@ export const Table = ({ data, width }) => {
       a[Object.keys(data[0])[0]] > b[Object.keys(data[0])[0]] ? 1 : -1
     )
   );
+  const [filtredData, setFiltredData] = useState([...sortData]);
   return (
     <section className="table" style={{ width: width }}>
       <header className="table-header">
         <TableLenght setLength={setLength} />
-        <TableFilter setSortData={setSortData} />
+        <TableFilter data={data} setFiltredData={setFiltredData} />
       </header>
       <table>
-        <TableHead sortData={sortData} setSortData={setSortData} />
-        <TableBody sortData={sortData} length={length} page={page} />
+        <TableHead
+          data={data}
+          filtredData={filtredData}
+          setFiltredData={setFiltredData}
+          setSortData={setSortData}
+        />
+        <TableBody
+          sortData={sortData}
+          filtredData={filtredData}
+          length={length}
+          page={page}
+        />
       </table>
       <footer className="table-footer">
         <TableInfo length={length} totalLength={sortData.length} page={page} />

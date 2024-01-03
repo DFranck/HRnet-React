@@ -1,14 +1,13 @@
 import { useState } from "react";
-export const TableFilter = (setSortData) => {
-  const [inputFilter, setInputFilter] = useState("");
-  console.log(inputFilter);
+import { handleChange } from "./TableFilterFunction";
+export const TableFilter = ({ data, setFiltredData }) => {
   return (
     <label>
       Search:
       <input
         type="text"
         placeholder="Search..."
-        onChange={(e) => setInputFilter(e.target.value)}
+        onChange={(e) => handleChange(e, data, setFiltredData)}
       />
     </label>
   );
