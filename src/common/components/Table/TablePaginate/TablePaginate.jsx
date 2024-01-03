@@ -1,25 +1,15 @@
-// import paginationCreation from "./paginationCreation";
+import { creatLinks, handleClick } from "./tablePaginateFunction";
 
 export const TablePaginate = ({ length, totalLength, setPage }) => {
   const numberOfPage = Math.ceil(totalLength / length);
-  const links = [];
-  const creatLinks = () => {
-    for (let i = 0; i < numberOfPage; i++) {
-      const newPage = i + 1;
-      links.push(
-        <button key={i} onClick={() => setPage(newPage)}>
-          {i + 1}
-        </button>
-      );
-    }
-    return links;
-  };
-  creatLinks();
+  const links = creatLinks(numberOfPage, setPage);
   return (
     <div>
-      <button href="">Previous</button>
+      <button onClick={(e) => handleClick(e, setPage)}>Previous</button>
       <span>{links}</span>
-      <button href="">Next</button>
+      <button onClick={(e) => handleClick(e, setPage, numberOfPage)}>
+        Next
+      </button>
     </div>
   );
 };
