@@ -1,7 +1,11 @@
-export const TableHead = () => {
+export const TableHead = ({ tHeadContent }) => {
   return (
     <thead>
-      <tr></tr>
+      <tr>
+        {tHeadContent.map((item) => (
+          <th key={item}>{item}</th>
+        ))}
+      </tr>
     </thead>
   );
 };

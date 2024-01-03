@@ -112,13 +112,12 @@ Gère l'affichage des en-têtes de colonnes du tableau et permet le tri des donn
 
 #### Props
 
-- `columns`: Un tableau décrivant les colonnes du tableau.
-- `onSort`: Fonction appelée lorsqu'une colonne est triée.
+- `tHeadContent={tHeadContent}`: Un tableau décrivant les colonnes du tableau.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableHead columns={columns} onSort={handleSort} />
+<TableHead tHeadContent={tHeadContent} />
 ```
 
 ### TableBody
@@ -127,12 +126,14 @@ Affiche les données du tableau dans le corps du tableau.
 
 #### Props
 
-- `data`: Données à afficher dans le tableau.
+- `data={data}`: Données à afficher dans le tableau.
+- `length={length}`: Nombre de lignes affichées par page.
+- `page={page}`: Page actuellement sélectionnée.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableBody data={data} />
+<TableBody data={data} length={length} page={page} />
 ```
 
 ## Fonctions du Composant `Table`
