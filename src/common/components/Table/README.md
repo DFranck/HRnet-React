@@ -112,12 +112,13 @@ Gère l'affichage des en-têtes de colonnes du tableau et permet le tri des donn
 
 #### Props
 
-- `tHeadContent={tHeadContent}`: Un tableau décrivant les colonnes du tableau.
+- `data={data}`: Un tableau duquel les en-têtes des colonnes du tableau sont extraits.
+- `setSortData={setSortData}`: Permet de changer le tri des données.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableHead tHeadContent={tHeadContent} />
+<TableHead data={data} setSortData={setSortData} />
 ```
 
 ### TableBody
@@ -146,7 +147,7 @@ Le composant `Table` permet à l'utilisateur de sélectionner le nombre d'élém
 
 Le composant `Table` inclut une fonction de recherche pour filtrer les données affichées. Cette fonction est gérée par le sous-composant `TableFilter` qui utilise un callback pour effectuer et refléter les changements de filtre.
 
-### Tri des colonnes []
+### Tri des colonnes [x]
 
 Le composant `Table` permet le tri des données par colonnes. Les utilisateurs peuvent trier les données en ordre ascendant ou descendant en cliquant sur les en-têtes de colonne, grâce au sous-composant `TableHead`.
 
