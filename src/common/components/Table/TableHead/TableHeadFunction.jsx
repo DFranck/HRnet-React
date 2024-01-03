@@ -1,20 +1,27 @@
-export const columnSort = (e, data, setSortData) => {
-  const columnToSort = e.target.textContent;
-  const columnData = data.map((item) => {
-    if (item[columnToSort] === undefined) {
-      return 0;
-    } else {
-      return item[columnToSort];
-    }
+export const handleClick = (e, setSortDirection, setSortData, data) => {
+  const sortedColumn = e.target.textContent;
+  const targetClass = e.target.className;
+  let sortDirection = 1;
+
+  switch (targetClass) {
+    case "":
+      setSortDirection("asc");
+      break;
+    case "asc":
+      sortDirection = -1;
+      setSortDirection("desc");
+      break;
+    case "desc":
+      setSortDirection("asc");
+      break;
+    default:
+      break;
+  }
+
+  const sortedData = [...data].sort((a, b) => {
+    if (a[sortedColumn] === b[sortedColumn]) return 0;
+    return a[sortedColumn] > b[sortedColumn] ? sortDirection : -sortDirection;
   });
-  columnData.sort((a, b) => {
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
-  console.log(columnToSort, data, columnData);
+
+  setSortData(sortedData);
 };

@@ -7,9 +7,13 @@ import { TableHead } from "./TableHead/TableHead";
 import { TableBody } from "./TableBody/TableBody";
 import "./table.css";
 export const Table = ({ data, width }) => {
-  const [length, setLength] = useState(10);
   const [page, setPage] = useState(1);
-  const [sortData, setSortData] = useState(data);
+  const [length, setLength] = useState(10);
+  const [sortData, setSortData] = useState(
+    [...data].sort((a, b) =>
+      a[Object.keys(data[0])[0]] > b[Object.keys(data[0])[0]] ? 1 : -1
+    )
+  );
   return (
     <section className="table" style={{ width: width }}>
       <header className="table-header">
