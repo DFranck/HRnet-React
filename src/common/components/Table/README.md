@@ -138,23 +138,23 @@ Affiche les données du tableau dans le corps du tableau.
 
 ## Fonctions du Composant `Table`
 
-### Affichage du nombre d'éléments
+### Affichage du nombre d'éléments [x]
 
 Le composant `Table` permet à l'utilisateur de sélectionner le nombre d'éléments à afficher dans le tableau. Cette fonction est gérée par le sous-composant `TableLength` qui reçoit un callback pour mettre à jour le nombre d'éléments affichés.
 
-### Recherche dans le tableau
+### Recherche dans le tableau []
 
 Le composant `Table` inclut une fonction de recherche pour filtrer les données affichées. Cette fonction est gérée par le sous-composant `TableFilter` qui utilise un callback pour effectuer et refléter les changements de filtre.
 
-### Tri des colonnes
+### Tri des colonnes []
 
 Le composant `Table` permet le tri des données par colonnes. Les utilisateurs peuvent trier les données en ordre ascendant ou descendant en cliquant sur les en-têtes de colonne, grâce au sous-composant `TableHead`.
 
-### Pagination du tableau
+### Pagination du tableau [x]
 
 Pour les grands ensembles de données, le composant `Table` offre une fonctionnalité de pagination. Le sous-composant `TablePaginate` gère la navigation entre les pages de données.
 
-### Affichage des informations du tableau
+### Affichage des informations du tableau [x]
 
 Le sous-composant `TableInfo` affiche des informations sur les données actuellement visibles, telles que le nombre total de lignes et les lignes affichées.
 
