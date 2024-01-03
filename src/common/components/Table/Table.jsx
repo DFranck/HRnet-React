@@ -7,8 +7,10 @@ import { TableHead } from "./TableHead/TableHead";
 import { TableBody } from "./TableBody/TableBody";
 import "./table.css";
 export const Table = ({ data, width }) => {
-  const [page, setPage] = useState(1);
-  const [length, setLength] = useState(10);
+  const [numberOfPage, setNumberOfPage] = useState(1);
+  const [displayLength, setDisplayLength] = useState(10);
+  const [displayedData, setDisplayedData] = useState(data);
+
   const [sortData, setSortData] = useState(
     [...data].sort((a, b) =>
       a[Object.keys(data[0])[0]] > b[Object.keys(data[0])[0]] ? 1 : -1
@@ -18,7 +20,7 @@ export const Table = ({ data, width }) => {
   return (
     <section className="table" style={{ width: width }}>
       <header className="table-header">
-        <TableLenght setLength={setLength} />
+        <TableLenght setDisplayLength={setDisplayLength} />
         <TableFilter data={data} setFiltredData={setFiltredData} />
       </header>
       <table>
@@ -31,16 +33,20 @@ export const Table = ({ data, width }) => {
         <TableBody
           sortData={sortData}
           filtredData={filtredData}
-          length={length}
-          page={page}
+          displayLength={displayLength}
+          numberOfPage={numberOfPage}
         />
       </table>
       <footer className="table-footer">
-        <TableInfo length={length} totalLength={sortData.length} page={page} />
-        <TablePaginate
-          length={length}
+        <TableInfo
+          displayLength={displayLength}
           totalLength={sortData.length}
-          setPage={setPage}
+          numberOfPage={numberOfPage}
+        />
+        <TablePaginate
+          displayLength={displayLength}
+          totalLength={sortData.length}
+          setNumberOfPage={setNumberOfPage}
         />
       </footer>
     </section>

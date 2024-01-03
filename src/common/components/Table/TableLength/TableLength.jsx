@@ -1,11 +1,11 @@
-export const TableLenght = ({ setLength }) => {
+export const TableLenght = ({ setDisplayLength }) => {
   return (
     <label>
       Show
       <select
         name="table_length"
         id="table_length"
-        onChange={(e) => setLength(e.target.value)}
+        onChange={(e) => setDisplayLength(e.target.value)}
       >
         <option value="10">10</option>
         <option value="25">25</option>

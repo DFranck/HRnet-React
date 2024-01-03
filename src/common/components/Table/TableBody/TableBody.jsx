@@ -1,11 +1,13 @@
-export const TableBody = ({ sortData, filtredData, length, page }) => {
-  let dataPage;
-  if (filtredData.length === 0) {
-    dataPage = sortData.slice((page - 1) * length, page * length);
-  } else {
-    dataPage = filtredData.slice((page - 1) * length, page * length);
-  }
-
+export const TableBody = ({
+  sortData,
+  filtredData,
+  displayLength,
+  numberOfPage,
+}) => {
+  const dataPage = filtredData.slice(
+    (numberOfPage - 1) * displayLength,
+    numberOfPage * displayLength
+  );
   return (
     <tbody>
       {dataPage.map((tr, index) => (

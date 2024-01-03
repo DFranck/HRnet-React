@@ -1,14 +1,14 @@
-export const TableInfo = ({ length, totalLength, page }) => {
+export const TableInfo = ({ displayLength, totalLength, numberOfPage }) => {
   let firstNumber;
   let secondNumber;
-  if (page === 1) {
+  if (numberOfPage === 1) {
     firstNumber = 1;
-    secondNumber = length;
+    secondNumber = displayLength;
   } else {
-    firstNumber = (page - 1) * length + 1;
-    secondNumber = firstNumber + length - 1;
+    firstNumber = (numberOfPage - 1) * displayLength + 1;
+    secondNumber = firstNumber + displayLength - 1;
   }
-
+  if (totalLength === 0) firstNumber = 0;
   return (
     <p>
       Showing {firstNumber} to
