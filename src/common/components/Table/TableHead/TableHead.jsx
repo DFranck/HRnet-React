@@ -1,8 +1,8 @@
 import { handleClick } from "./TableHeadFunction";
 import { useState } from "react";
-export const TableHead = ({ data, setSortData }) => {
-  const tableHeadContents = Object.keys(data[0]);
-  const [sortedColumn, setSortedColumn] = useState(Object.keys(data[0])[0]);
+export const TableHead = ({ sortData, setSortData }) => {
+  const tableHeadContents = Object.keys(sortData[0]);
+  const [sortedColumn, setSortedColumn] = useState(Object.keys(sortData[0])[0]);
   const [sortDirection, setSortDirection] = useState("asc");
   return (
     <thead>
@@ -11,7 +11,7 @@ export const TableHead = ({ data, setSortData }) => {
           <th
             key={item + index}
             onClick={(e) => {
-              handleClick(e, setSortDirection, setSortData, data);
+              handleClick(e, setSortDirection, setSortData, sortData);
               setSortedColumn(e.target.textContent);
             }}
             className={item === sortedColumn ? sortDirection : ""}

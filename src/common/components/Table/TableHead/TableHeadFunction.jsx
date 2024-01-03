@@ -1,4 +1,4 @@
-export const handleClick = (e, setSortDirection, setSortData, data) => {
+export const handleClick = (e, setSortDirection, setSortData, sortData) => {
   const sortedColumn = e.target.textContent;
   const targetClass = e.target.className;
   let sortDirection = 1;
@@ -18,7 +18,7 @@ export const handleClick = (e, setSortDirection, setSortData, data) => {
       break;
   }
 
-  const sortedData = [...data].sort((a, b) => {
+  const sortedData = [...sortData].sort((a, b) => {
     if (a[sortedColumn] === b[sortedColumn]) return 0;
     return a[sortedColumn] > b[sortedColumn] ? sortDirection : -sortDirection;
   });

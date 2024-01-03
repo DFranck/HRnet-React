@@ -18,17 +18,17 @@ export const Table = ({ data, width }) => {
     <section className="table" style={{ width: width }}>
       <header className="table-header">
         <TableLenght setLength={setLength} />
-        <TableFilter />
+        <TableFilter setSortData={setSortData} />
       </header>
       <table>
-        <TableHead data={data} setSortData={setSortData} />
+        <TableHead sortData={sortData} setSortData={setSortData} />
         <TableBody sortData={sortData} length={length} page={page} />
       </table>
       <footer className="table-footer">
-        <TableInfo length={length} totalLength={data.length} page={page} />
+        <TableInfo length={length} totalLength={sortData.length} page={page} />
         <TablePaginate
           length={length}
-          totalLength={data.length}
+          totalLength={sortData.length}
           setPage={setPage}
         />
       </footer>
