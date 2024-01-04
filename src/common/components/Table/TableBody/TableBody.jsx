@@ -1,3 +1,4 @@
+import "./tableBody.css";
 export const TableBody = ({ displayLength, pageNumber, displayedData }) => {
   const dataPage = displayedData.slice(
     (pageNumber - 1) * displayLength,

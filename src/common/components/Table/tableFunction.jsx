@@ -18,7 +18,8 @@ export const sortAndFilter = (
     });
   };
   const sort = (sortedColumn, sortDirection) => {
-    const sortedDirection = sortDirection === "sorting-asc" ? 1 : -1;
+    const sortedDirection =
+      sortDirection === "pmf-tableHead-cell-sorting-asc" ? 1 : -1;
     sortedData = [...filtredData].sort((a, b) => {
       if (a[sortedColumn] === b[sortedColumn]) return 0;
       return a[sortedColumn] > b[sortedColumn]
@@ -31,20 +32,25 @@ export const sortAndFilter = (
   setDisplayedData(sortedData);
 };
 
-export const setDirectionAndColumn = (e, setSortDirection, setSortedColumn) => {
+export const setDirectionAndColumn = (
+  item,
+  e,
+  setSortDirection,
+  setSortedColumn
+) => {
   const targetClass = e.target.className;
   switch (targetClass) {
-    case "sorting-asc":
-      setSortDirection("sorting-desc");
-      setSortedColumn(e.target.textContent);
+    case "pmf-tableHead-cell-sorting-asc":
+      setSortDirection("pmf-tableHead-cell-sorting-desc");
+      setSortedColumn(item);
       break;
-    case "sorting-desc":
-      setSortDirection("sorting-asc");
-      setSortedColumn(e.target.textContent);
+    case "pmf-tableHead-cell-sorting-desc":
+      setSortDirection("pmf-tableHead-cell-sorting-asc");
+      setSortedColumn(item);
       break;
     default:
-      setSortDirection("sorting-asc");
-      setSortedColumn(e.target.textContent);
+      setSortDirection("pmf-tableHead-cell-sorting-asc");
+      setSortedColumn(item);
       break;
   }
 };

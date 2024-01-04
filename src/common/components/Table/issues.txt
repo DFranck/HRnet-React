@@ -8,4 +8,3 @@
 
 
 #verifier depuis TableFilter
-#pmf-tableHead-cell-sorting? sorting/sorting-asc/sorting-desc? au autre?
