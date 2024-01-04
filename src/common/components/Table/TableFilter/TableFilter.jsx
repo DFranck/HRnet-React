@@ -1,3 +1,4 @@
+import "./tableFilter.css";
 export const TableFilter = ({ setInputValue }) => {
   return (
     <label htmlFor="pmf-tableFilter-input" className="pmf-tableFilter-label">
