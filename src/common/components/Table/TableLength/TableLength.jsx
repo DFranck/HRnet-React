@@ -1,3 +1,4 @@
+import "./TableLength.css";
 export const TableLength = ({ setDisplayLength }) => {
   return (
     <label htmlFor="pmf-tableLength-select" className="pmf-tableLength-label">

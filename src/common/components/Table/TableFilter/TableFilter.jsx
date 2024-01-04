@@ -1,11 +1,11 @@
 export const TableFilter = ({ setInputValue }) => {
   return (
-    <label id="table-filter-label">
+    <label htmlFor="pmf-tableFilter-input" className="pmf-tableFilter-label">
       Search:
       <input
-        id="table-filter-input"
+        id="pmf-tableFilter-input"
         type="text"
-        placeholder="Search..."
+        placeholder=""
         onChange={(e) => setInputValue(e.target.value)}
       />
     </label>

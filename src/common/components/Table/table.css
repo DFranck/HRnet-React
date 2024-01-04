@@ -1,19 +1,19 @@
 /**********/
 /*wrappers*/
 /**********/
-#table-wrapper {
+.pmf-tableWrapper {
   width: 990px;
 }
 
-#table-header,
-#table-footer {
+.pmf-tableHeader,
+.pmf-tableFooter {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#table {
+.pmf-table {
   width: 100%;
   /* margin: 0 auto;
   clear: both;
