@@ -169,6 +169,8 @@ Le composant `Table` inclut une fonction de recherche pour filtrer les données 
 
 ### Tri des colonnes [x]
 
+# WARNING DATE
+
 Le composant `Table` permet le tri des données par colonnes. Les utilisateurs peuvent trier les données en ordre ascendant ou descendant en cliquant sur les en-têtes de colonne, grâce au sous-composant `TableHead`.
 
 ### Pagination du tableau [x]

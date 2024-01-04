@@ -1,10 +1,6 @@
 export const TableLenght = ({ setDisplayLength }) => {
   return (
-    <label
-      name="table-length-label"
-      htmlFor="table-length-select"
-      id="table-length-label"
-    >
+    <label htmlFor="table-length-select" id="table-length-label">
       Show
       <select
         name="table-length-select"

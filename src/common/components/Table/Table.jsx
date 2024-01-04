@@ -33,12 +33,12 @@ export const Table = ({ data }) => {
   }, [sortDirection, sortedColumn, inputValue]);
 
   return (
-    <section className="table">
-      <header className="table-header">
+    <section id="table-wrapper">
+      <header id="table-header">
         <TableLenght setDisplayLength={setDisplayLength} />
         <TableFilter setInputValue={setInputValue} />
       </header>
-      <table>
+      <table id="table">
         <TableHead
           tableHeadContents={tableHeadContents}
           sortedColumn={sortedColumn}
@@ -52,7 +52,7 @@ export const Table = ({ data }) => {
           pageNumber={pageNumber}
         />
       </table>
-      <footer className="table-footer">
+      <footer id="table-footer">
         <TableInfo
           displayLength={displayLength}
           totalLength={displayedData.length}
