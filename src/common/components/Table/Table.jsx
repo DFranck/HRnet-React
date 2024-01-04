@@ -17,7 +17,7 @@ export const Table = ({ data }) => {
   const [displayLength, setDisplayLength] = useState(10);
   const [displayedData, setDisplayedData] = useState(data);
   const [sortedColumn, setSortedColumn] = useState(Object.keys(data[0])[0]);
-  const [sortDirection, setSortDirection] = useState("asc");
+  const [sortDirection, setSortDirection] = useState("sorting-asc");
   const [inputValue, setInputValue] = useState("");
   const tableHeadContents = Object.keys(data[0]);
 

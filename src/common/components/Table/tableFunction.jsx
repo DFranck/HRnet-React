@@ -18,7 +18,7 @@ export const sortAndFilter = (
     });
   };
   const sort = (sortedColumn, sortDirection) => {
-    const sortedDirection = sortDirection === "asc" ? 1 : -1;
+    const sortedDirection = sortDirection === "sorting-asc" ? 1 : -1;
     sortedData = [...filtredData].sort((a, b) => {
       if (a[sortedColumn] === b[sortedColumn]) return 0;
       return a[sortedColumn] > b[sortedColumn]
@@ -34,16 +34,16 @@ export const sortAndFilter = (
 export const setDirectionAndColumn = (e, setSortDirection, setSortedColumn) => {
   const targetClass = e.target.className;
   switch (targetClass) {
-    case "asc":
-      setSortDirection("desc");
+    case "sorting-asc":
+      setSortDirection("sorting-desc");
       setSortedColumn(e.target.textContent);
       break;
-    case "desc":
-      setSortDirection("asc");
+    case "sorting-desc":
+      setSortDirection("sorting-asc");
       setSortedColumn(e.target.textContent);
       break;
     default:
-      setSortDirection("asc");
+      setSortDirection("sorting-asc");
       setSortedColumn(e.target.textContent);
       break;
   }

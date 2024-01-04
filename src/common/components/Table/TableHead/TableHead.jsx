@@ -16,7 +16,7 @@ export const TableHead = ({
             onClick={(e) =>
               setDirectionAndColumn(e, setSortDirection, setSortedColumn)
             }
-            className={item === sortedColumn ? sortDirection : ""}
+            className={item === sortedColumn ? sortDirection : "sorting"}
           >
             {item}
           </th>
