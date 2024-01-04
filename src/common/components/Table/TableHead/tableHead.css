@@ -1,39 +1,23 @@
-.pmf-tableHead {
-  /* display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit; */
+.pmf-tableHead-cell-sorting,
+.pmf-tableHead-cell-sorting-asc,
+.pmf-tableHead-cell-sorting-desc {
+  padding: 10px 18px;
+  border-bottom: 1px solid #111;
+  background-repeat: no-repeat;
+  background-position: center right;
 }
 
 .pmf-tableHead-row {
-  /* display: table-row;
-  vertical-align: inherit;
-  border-color: inherit; */
-}
-
-.sorting {
-  background-image: none;
-}
-
-.sorting-asc {
-  background-image: none;
-}
-
-.sorting-desc {
-  background-image: none;
-}
-
-.sorting,
-.sorting-asc,
-.sorting-desc {
   cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center right;
-  padding: 10px 18px;
-  border-bottom: 1px solid #111;
-  font-weight: bold;
-  box-sizing: content-box;
-  display: table-cell;
-  vertical-align: inherit;
-  /* font-weight: bold; */
-  text-align: -internal-center;
+}
+
+.pmf-tableHead-cell-sorting {
+  background-image: url("../img/sort_both.png");
+}
+
+.pmf-tableHead-cell-sorting-asc {
+  background-image: url("../img/sort_asc.png");
+}
+.pmf-tableHead-cell-sorting-desc {
+  background-image: url("../img/sort_desc.png");
 }

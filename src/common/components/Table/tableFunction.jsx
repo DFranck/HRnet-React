@@ -33,7 +33,7 @@ export const sortAndFilter = (
 };
 
 export const setDirectionAndColumn = (
-  item,
+  cell,
   e,
   setSortDirection,
   setSortedColumn
@@ -42,15 +42,15 @@ export const setDirectionAndColumn = (
   switch (targetClass) {
     case "pmf-tableHead-cell-sorting-asc":
       setSortDirection("pmf-tableHead-cell-sorting-desc");
-      setSortedColumn(item);
+      setSortedColumn(cell);
       break;
     case "pmf-tableHead-cell-sorting-desc":
       setSortDirection("pmf-tableHead-cell-sorting-asc");
-      setSortedColumn(item);
+      setSortedColumn(cell);
       break;
     default:
       setSortDirection("pmf-tableHead-cell-sorting-asc");
-      setSortedColumn(item);
+      setSortedColumn(cell);
       break;
   }
 };

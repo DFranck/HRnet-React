@@ -10,20 +10,20 @@ export const TableHead = ({
   return (
     <thead className="pmf-tableHead">
       <tr className="pmf-tableHead-row">
-        {tableHeadContents.map((item, index) => (
+        {tableHeadContents.map((cell, cellIndex) => (
           <th
-            key={item + index}
+            key={cell + cellIndex}
             onClick={(e) =>
-              setDirectionAndColumn(item, e, setSortDirection, setSortedColumn)
+              setDirectionAndColumn(cell, e, setSortDirection, setSortedColumn)
             }
             className={
-              item === sortedColumn
+              cell === sortedColumn
                 ? sortDirection
                 : "pmf-tableHead-cell-sorting"
             }
           >
-            {item.charAt(0).toUpperCase() +
-              item.slice(1).replace(/([A-Z])/g, " $1")}
+            {cell.charAt(0).toUpperCase() +
+              cell.slice(1).replace(/([A-Z])/g, " $1")}
           </th>
         ))}
       </tr>
