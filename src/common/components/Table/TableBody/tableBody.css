@@ -27,7 +27,21 @@
   vertical-align: inherit;
 }
 
-.pmf-tableBody-cell-sorting {
+.pmf-tableBody-cell-sorting-odd,
+.pmf-tableBody-cell-sorting-even {
+  border-top: 1px solid #ddd;
+  padding: 8px 10px;
+}
+
+.pmf-tableBody-cell-sorting-odd {
   background-color: #f1f1f1;
-  border-top: none;
+}
+
+.pmf-tableBody-cell-sorting-even {
+  background-color: #fafafa;
+}
+.pmf-tableBody-cell-noData {
+  padding: 8px 10px;
+  background-color: #f9f9f9;
+  text-align: center;
 }

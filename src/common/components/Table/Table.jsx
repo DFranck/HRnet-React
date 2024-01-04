@@ -21,10 +21,10 @@ export const Table = ({ data }) => {
     "pmf-tableHead-cell-sorting-asc"
   );
   const [inputValue, setInputValue] = useState("");
-  const tableHeadContents = Object.keys(data[0]);
-
+  const [tableHeadContents, setTableHeadContents] = useState([]);
   //useEffect for re-render when user sort or filter the table
   useEffect(() => {
+    setTableHeadContents(Object.keys(data[0]));
     sortAndFilter(
       data,
       sortDirection,
@@ -53,6 +53,7 @@ export const Table = ({ data }) => {
           displayLength={displayLength}
           pageNumber={pageNumber}
           sortedColumn={sortedColumn}
+          tableHeadContents={tableHeadContents}
         />
       </table>
       <footer className="pmf-tableFooter">
