@@ -1,7 +1,38 @@
+.table {
+  width: 990px;
+}
+
 .table-header,
 .table-footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+#table-length-label {
+  margin-top: 1rem;
+  margin-bottom: 10px;
+}
+#table-length-select {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+table {
+  width: 100%;
+  /* margin: 0 auto;
+  clear: both;
+  border-collapse: separate; */
+  border-spacing: 0;
+}
+
+td {
+  padding: 8px 10px;
+}
+.even {
+  background-color: #f2f2f2;
+}
+
+.odd {
+  background-color: #ffffff;
 }

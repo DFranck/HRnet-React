@@ -6,7 +6,7 @@ export const TableBody = ({ displayLength, pageNumber, displayedData }) => {
   return (
     <tbody>
       {dataPage.map((tr, index) => (
-        <tr key={tr + index}>
+        <tr key={tr + index} className={index % 2 === 0 ? "even" : "odd"}>
           {Object.values(tr).map((td, index) => (
             <td key={td + index}>{td}</td>
           ))}
