@@ -6,7 +6,6 @@ export const TableFilter = ({ setInputValue }) => {
       <input
         id="pmf-tableFilter-input"
         type="text"
-        placeholder=""
         onChange={(e) => setInputValue(e.target.value)}
       />
     </label>

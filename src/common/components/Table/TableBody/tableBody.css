@@ -1,0 +1,33 @@
+.pmf-tableBody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.pmf-tableBody-row-even,
+.pmf-tableBody-row-odd {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.pmf-tableBody-row-odd {
+  background-color: #f9f9f9;
+}
+
+.pmf-tableBody-row-even {
+  background-color: #ffffff;
+}
+
+.pmf-tableBody-cell {
+  border-top: 1px solid #ddd;
+  padding: 8px 10px;
+  box-sizing: content-box;
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+.pmf-tableBody-cell-sorting {
+  background-color: #f1f1f1;
+  border-top: none;
+}
