@@ -1,30 +1,34 @@
-import { handleClick } from "./TableHeadFunction";
-import { useState } from "react";
 export const TableHead = ({
-  data,
-  filtredData,
-  setFiltredData,
-  setSortData,
+  sortDirection,
+  sortedColumn,
+  setSortedColumn,
+  setSortDirection,
+  tableHeadContents,
 }) => {
-  const tableHeadContents = Object.keys(data[0]);
-  const [sortedColumn, setSortedColumn] = useState(Object.keys(data[0])[0]);
-  const [sortDirection, setSortDirection] = useState("asc");
+  const handleClick = (e) => {
+    const targetClass = e.target.className;
+    switch (targetClass) {
+      case "asc":
+        setSortDirection("desc");
+        setSortedColumn(e.target.textContent);
+        break;
+      case "desc":
+        setSortDirection("asc");
+        setSortedColumn(e.target.textContent);
+        break;
+      default:
+        setSortDirection("asc");
+        setSortedColumn(e.target.textContent);
+        break;
+    }
+  };
   return (
     <thead>
       <tr>
         {tableHeadContents.map((item, index) => (
           <th
             key={item + index}
-            onClick={(e) => {
-              handleClick(
-                e,
-                setSortDirection,
-                setSortData,
-                setFiltredData,
-                filtredData
-              );
-              setSortedColumn(e.target.textContent);
-            }}
+            onClick={(e) => handleClick(e)}
             className={item === sortedColumn ? sortDirection : ""}
           >
             {item}

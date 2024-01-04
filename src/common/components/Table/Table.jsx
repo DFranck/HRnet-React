@@ -1,38 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TableLenght } from "./TableLength/TableLength";
 import { TableFilter } from "./TableFilter/TableFilter";
 import { TableInfo } from "./TableInfo/TableInfo";
 import { TablePaginate } from "./TablePaginate/TablePaginate";
 import { TableHead } from "./TableHead/TableHead";
 import { TableBody } from "./TableBody/TableBody";
+import { tableFunction } from "./tableFunction";
 import "./table.css";
 export const Table = ({ data, width }) => {
   const [numberOfPage, setNumberOfPage] = useState(1);
   const [displayLength, setDisplayLength] = useState(10);
   const [displayedData, setDisplayedData] = useState(data);
-
-  const [sortData, setSortData] = useState(
-    [...data].sort((a, b) =>
-      a[Object.keys(data[0])[0]] > b[Object.keys(data[0])[0]] ? 1 : -1
-    )
-  );
-  const [filtredData, setFiltredData] = useState([...sortData]);
+  const [sortedColumn, setSortedColumn] = useState(Object.keys(data[0])[0]);
+  const [sortDirection, setSortDirection] = useState("asc");
+  const [inputValue, setInputValue] = useState("");
+  const tableHeadContents = Object.keys(data[0]);
+  useEffect(() => {
+    tableFunction(
+      data,
+      sortDirection,
+      sortedColumn,
+      inputValue,
+      setDisplayedData
+    );
+  }, [sortDirection, sortedColumn, inputValue]);
   return (
     <section className="table" style={{ width: width }}>
       <header className="table-header">
         <TableLenght setDisplayLength={setDisplayLength} />
-        <TableFilter data={data} setFiltredData={setFiltredData} />
+        <TableFilter setInputValue={setInputValue} />
       </header>
       <table>
         <TableHead
-          data={data}
-          filtredData={filtredData}
-          setFiltredData={setFiltredData}
-          setSortData={setSortData}
+          tableHeadContents={tableHeadContents}
+          sortedColumn={sortedColumn}
+          setSortedColumn={setSortedColumn}
+          sortDirection={sortDirection}
+          setSortDirection={setSortDirection}
         />
         <TableBody
-          sortData={sortData}
-          filtredData={filtredData}
+          displayedData={displayedData}
           displayLength={displayLength}
           numberOfPage={numberOfPage}
         />
@@ -40,12 +47,12 @@ export const Table = ({ data, width }) => {
       <footer className="table-footer">
         <TableInfo
           displayLength={displayLength}
-          totalLength={sortData.length}
+          totalLength={displayedData.length}
           numberOfPage={numberOfPage}
         />
         <TablePaginate
           displayLength={displayLength}
-          totalLength={sortData.length}
+          totalLength={displayedData.length}
           setNumberOfPage={setNumberOfPage}
         />
       </footer>

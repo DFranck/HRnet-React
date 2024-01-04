@@ -1,10 +1,5 @@
-export const TableBody = ({
-  sortData,
-  filtredData,
-  displayLength,
-  numberOfPage,
-}) => {
-  const dataPage = filtredData.slice(
+export const TableBody = ({ displayLength, numberOfPage, displayedData }) => {
+  const dataPage = displayedData.slice(
     (numberOfPage - 1) * displayLength,
     numberOfPage * displayLength
   );
