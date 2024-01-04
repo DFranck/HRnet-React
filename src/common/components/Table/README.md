@@ -154,12 +154,45 @@ Affiche les données du tableau dans le corps du tableau.
 />
 ```
 
+## Convention de Nommage des Classes CSS
+
+Dans le cadre de ce projet, nous avons adopté une convention de nommage des classes CSS pour assurer la cohérence et minimiser les conflits de styles, en particulier lors de l'intégration de ce composant dans d'autres projets.
+
+### Préfixe des Classes
+
+Toutes les classes CSS principales de ce composant sont préfixées avec `pmf-` (abréviation de Polymorf), ce qui permet d'identifier rapidement les classes comme faisant partie de la bibliothèque de composants de table Polymorf.
+
+### Structure des Classes
+
+- **Éléments de Base** : Les classes liées aux éléments de base du composant `Table` suivent le format `pmf-elementName`. Exemple : `pmf-table`, `pmf-tableHead`, `pmf-tableBody`.
+
+- **États et Variants** : Les classes qui définissent des états ou des variantes sont suffixées avec le nom de l'état ou de la variante. Exemple : `pmf-table--striped` pour une table avec des lignes zébrées.
+
+- **Enfants et Sous-éléments** : Les classes des sous-éléments ou des éléments enfants suivent le format `pmf-elementName_childName`. Exemple : `pmf-table_row`, `pmf-table_cell`.
+
+- **Modificateurs** : Les classes modificateurs qui changent l'apparence ou le comportement de manière significative utilisent le format `pmf-elementName--modifierName`. Exemple : `pmf-table--responsive`.
+
+### Exemples
+
+Voici quelques exemples de notre convention de nommage des classes :
+
+- Table principale : `pmf-table`
+- En-tête de table : `pmf-tableHead`
+- Cellule d'en-tête : `pmf-tableHeadCell`
+- Corps de la table : `pmf-tableBody`
+- Cellule du corps de la table : `pmf-tableCell`
+- Pagination de la table : `pmf-tablePagination`
+
+Nous encourageons les contributeurs et les utilisateurs à suivre cette convention lors de l'extension ou de la personnalisation des styles de ce composant.
+
 ## Fonctions du Composant `Table`
 
 Table gère Tout les states du composant.
 Table utilise un useEffect pour re-render le composant apres chaque changement.
 
 ### Affichage du nombre d'éléments [x]
+
+# WARNING DATA = null ou undefined []
 
 Le composant `Table` permet à l'utilisateur de sélectionner le nombre d'éléments à afficher dans le tableau. Cette fonction est gérée par le sous-composant `TableLength` qui reçoit un callback pour mettre à jour le nombre d'éléments affichés.
 
@@ -169,7 +202,7 @@ Le composant `Table` inclut une fonction de recherche pour filtrer les données 
 
 ### Tri des colonnes [x]
 
-# WARNING DATE
+# WARNING DATE []
 
 Le composant `Table` permet le tri des données par colonnes. Les utilisateurs peuvent trier les données en ordre ascendant ou descendant en cliquant sur les en-têtes de colonne, grâce au sous-composant `TableHead`.
 

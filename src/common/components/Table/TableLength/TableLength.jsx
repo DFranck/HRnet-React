@@ -1,10 +1,10 @@
-export const TableLenght = ({ setDisplayLength }) => {
+export const TableLength = ({ setDisplayLength }) => {
   return (
-    <label htmlFor="table-length-select" id="table-length-label">
+    <label htmlFor="pmf-tableLength-select" className="pmf-tableLength-label">
       Show
       <select
-        name="table-length-select"
-        id="table-length-select"
+        name="pmf-tableLength-select"
+        id="pmf-tableLength-select"
         onChange={(e) => setDisplayLength(e.target.value)}
       >
         <option value="10">10</option>

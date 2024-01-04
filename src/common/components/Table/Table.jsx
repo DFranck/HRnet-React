@@ -1,7 +1,7 @@
 //dependencies
 import { useEffect, useState } from "react";
 //subComponents
-import { TableLenght } from "./TableLength/TableLength";
+import { TableLength } from "./TableLength/TableLength";
 import { TableFilter } from "./TableFilter/TableFilter";
 import { TableInfo } from "./TableInfo/TableInfo";
 import { TablePaginate } from "./TablePaginate/TablePaginate";
@@ -30,15 +30,15 @@ export const Table = ({ data }) => {
       inputValue,
       setDisplayedData
     );
-  }, [sortDirection, sortedColumn, inputValue]);
+  }, [data, sortDirection, sortedColumn, inputValue]);
 
   return (
-    <section id="table-wrapper">
-      <header id="table-header">
-        <TableLenght setDisplayLength={setDisplayLength} />
+    <section className="pmf-tableWrapper">
+      <header className="pmf-tableHeader">
+        <TableLength setDisplayLength={setDisplayLength} />
         <TableFilter setInputValue={setInputValue} />
       </header>
-      <table id="table">
+      <table className="pmf-table">
         <TableHead
           tableHeadContents={tableHeadContents}
           sortedColumn={sortedColumn}
@@ -52,7 +52,7 @@ export const Table = ({ data }) => {
           pageNumber={pageNumber}
         />
       </table>
-      <footer id="table-footer">
+      <footer className="pmf-tableFooter">
         <TableInfo
           displayLength={displayLength}
           totalLength={displayedData.length}

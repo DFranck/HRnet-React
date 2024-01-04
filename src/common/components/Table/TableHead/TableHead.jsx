@@ -7,7 +7,7 @@ export const TableHead = ({
   tableHeadContents,
 }) => {
   return (
-    <thead>
+    <thead id="table-head">
       <tr>
         {tableHeadContents.map((item, index) => (
           <th
