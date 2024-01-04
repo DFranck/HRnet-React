@@ -192,8 +192,6 @@ Table utilise un useEffect pour re-render le composant apres chaque changement.
 
 ### Affichage du nombre d'éléments [x]
 
-# WARNING DATA = null ou undefined []
-
 Le composant `Table` permet à l'utilisateur de sélectionner le nombre d'éléments à afficher dans le tableau. Cette fonction est gérée par le sous-composant `TableLength` qui reçoit un callback pour mettre à jour le nombre d'éléments affichés.
 
 ### Recherche dans le tableau [x]
@@ -201,8 +199,6 @@ Le composant `Table` permet à l'utilisateur de sélectionner le nombre d'élém
 Le composant `Table` inclut une fonction de recherche pour filtrer les données affichées. Cette fonction est gérée par le sous-composant `Table` qui utilise un callback pour effectuer et refléter les changements de filtre déclanché par le sous-composant `TableFilter`.
 
 ### Tri des colonnes [x]
-
-# WARNING DATE []
 
 Le composant `Table` permet le tri des données par colonnes. Les utilisateurs peuvent trier les données en ordre ascendant ou descendant en cliquant sur les en-têtes de colonne, grâce au sous-composant `TableHead`.
 

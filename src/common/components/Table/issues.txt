@@ -1,0 +1,4 @@
+# WARNING, gerer le cas DATA = null ou undefined []
+# WARNING, modifier le triage des DATE []
+# Ameliorer l'accessibilité
+# rendre le souscomposant tableLength personnalisable, permettre la personnalisation de la liste des options (10, 25, 50, 100) par les utilisateurs du composant. Cela peut être réalisé en passant ces valeurs en tant que props, rendant le composant plus flexible.
