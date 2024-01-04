@@ -1,6 +1,6 @@
 # Table
 
-render a table with a list of items from props : {data}
+render a table with a list of items from props : data={YOURDATA}
 
 ## Structure du Composant
 
@@ -13,6 +13,8 @@ Le composant `Table` est organisé en plusieurs sous-composants pour une clarté
   - `TableBody`: Gère l'affichage des données dans le corps du tableau.
 - `TableInfo`: Affiche des informations sur les données actuellement visibles dans le tableau.
 - `TablePaginate`: Offre des contrôles de pagination pour naviguer entre les différentes pages de données.
+
+les `fonctions` sont executé par les sous-composants mais sont gérées dans un fichier dédier pour que les sous-composants se concentre sur le rendu.
 
 ## Utilisation du Composant `Table`
 
@@ -34,10 +36,6 @@ Pour utiliser le composant `Table`, passez les données sous forme d'un tableau 
 ]
 ```
 
-#### Autre Props
-
-- `width`: Largeur du tableau.
-
 #### Exemple d'utilisation
 
 ```jsx
@@ -52,12 +50,12 @@ Ce sous-composant permet à l'utilisateur de choisir le nombre de lignes à affi
 
 #### Props
 
-- `setLength={setLength}`: Changement du state lors de la modification du nombre de lignes à afficher.
+- `setDisplayLength={setDisplayLength}`: Changement du state lors de la modification du nombre de lignes à afficher.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableLenght setLength={setLength} />
+<TableLenght setDisplayLength={setDisplayLength} />
 ```
 
 ### TableFilter
@@ -66,12 +64,12 @@ Permet de filtrer les données du tableau en fonction d'une chaîne de recherche
 
 #### Props
 
-- `onChange`: Fonction appelée lors de la modification de la chaîne de recherche.
+- `setInputValue={setInputValue}`: Changement du state lors de la modification de la chaîne de recherche.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableFilter onChange={handleFilterChange} />
+<TableFilter setInputValue={setInputValue} />
 ```
 
 ### TableInfo
@@ -80,14 +78,18 @@ Affiche des informations sur les données actuellement visibles dans le tableau,
 
 #### Props
 
-- `totalLength={data.length}`: Nombre total de lignes.
-- `length={length}`: Nombre de lignes affichées par page.
-- `page={page}` : Page actuellement sélectionnée.
+- `displayLength={displayLength}`: Nombre de lignes affichées par page.
+- `totalLength={displayedData.length}`: Nombre total de lignes.
+- `pageNumber={pageNumber}` : Page actuellement sélectionnée.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableInfo length={length} totalLength={data.length} page={page} />
+<TableInfo
+  displayLength={displayLength}
+  totalLength={displayedData.length}
+  pageNumber={pageNumber}
+/>
 ```
 
 ### TablePaginate
@@ -96,14 +98,18 @@ Fournit des contrôles de pagination pour naviguer entre les pages de données d
 
 #### Props
 
-- `length={length}`: Nombre de lignes affichées par page.
-- `totalLength={data.length}`: Nombre total de data.
-- `setPage={setPage}`: Permet de changer la Page actuellement sélectionnée.
+- `displayLength={displayLength}`: Nombre de lignes affichées par page.
+- `totalLength={displayedData.length}`: Nombre total de data.
+- `setPageNumber={setPageNumber}`: Permet de changer la Page actuellement sélectionnée.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TablePaginate length={length} totalLength={data.length} setPage={setPage} />
+<TablePaginate
+  displayLength={displayLength}
+  totalLength={displayedData.length}
+  setPageNumber={setPageNumber}
+/>
 ```
 
 ### TableHead
@@ -112,13 +118,20 @@ Gère l'affichage des en-têtes de colonnes du tableau et permet le tri des donn
 
 #### Props
 
-- `data={data}`: Un tableau duquel les en-têtes des colonnes du tableau sont extraits.
-- `setSortData={setSortData}`: Permet de changer le tri des données.
+- `tableHeadContents={tableHeadContents}`: Un tableau duquel les en-têtes des colonnes du tableau sont extraits.
+- `sortedColumn={sortedColumn} & setSortedColumn={setSortedColumn}`: Permettent de changer selectionner la colonne à trier.
+- `sortDirection={sortDirection} & setSortDirection={setSortDirection}`: Permettent de changer le sens du tri.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableHead data={data} setSortData={setSortData} />
+<TableHead
+  tableHeadContents={tableHeadContents}
+  sortedColumn={sortedColumn}
+  setSortedColumn={setSortedColumn}
+  sortDirection={sortDirection}
+  setSortDirection={setSortDirection}
+/>
 ```
 
 ### TableBody
@@ -127,25 +140,32 @@ Affiche les données du tableau dans le corps du tableau.
 
 #### Props
 
-- `data={data}`: Données à afficher dans le tableau.
-- `length={length}`: Nombre de lignes affichées par page.
-- `page={page}`: Page actuellement sélectionnée.
+- `displayedData={displayedData}`: Données à afficher dans le tableau.
+- `displayLength={displayLength}`: Nombre de lignes affichées par page.
+- `pageNumber={pageNumber}`: Page actuellement sélectionnée.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableBody data={data} length={length} page={page} />
+<TableBody
+  displayedData={displayedData}
+  displayLength={displayLength}
+  pageNumber={pageNumber}
+/>
 ```
 
 ## Fonctions du Composant `Table`
+
+Table gère Tout les states du composant.
+Table utilise un useEffect pour re-render le composant apres chaque changement.
 
 ### Affichage du nombre d'éléments [x]
 
 Le composant `Table` permet à l'utilisateur de sélectionner le nombre d'éléments à afficher dans le tableau. Cette fonction est gérée par le sous-composant `TableLength` qui reçoit un callback pour mettre à jour le nombre d'éléments affichés.
 
-### Recherche dans le tableau []
+### Recherche dans le tableau [x]
 
-Le composant `Table` inclut une fonction de recherche pour filtrer les données affichées. Cette fonction est gérée par le sous-composant `TableFilter` qui utilise un callback pour effectuer et refléter les changements de filtre.
+Le composant `Table` inclut une fonction de recherche pour filtrer les données affichées. Cette fonction est gérée par le sous-composant `Table` qui utilise un callback pour effectuer et refléter les changements de filtre déclanché par le sous-composant `TableFilter`.
 
 ### Tri des colonnes [x]
 

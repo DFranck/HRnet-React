@@ -1,11 +1,11 @@
-export const TableInfo = ({ displayLength, totalLength, numberOfPage }) => {
+export const TableInfo = ({ displayLength, totalLength, pageNumber }) => {
   let firstNumber;
   let secondNumber;
-  if (numberOfPage === 1) {
+  if (pageNumber === 1) {
     firstNumber = 1;
     secondNumber = displayLength;
   } else {
-    firstNumber = (numberOfPage - 1) * displayLength + 1;
+    firstNumber = (pageNumber - 1) * displayLength + 1;
     secondNumber = firstNumber + displayLength - 1;
   }
   if (totalLength === 0) firstNumber = 0;

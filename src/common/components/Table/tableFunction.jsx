@@ -1,4 +1,4 @@
-export const tableFunction = (
+export const sortAndFilter = (
   data,
   sortDirection,
   sortedColumn,
@@ -29,4 +29,48 @@ export const tableFunction = (
   inputValue ? filter(data, inputValue) : (filtredData = data);
   sort(sortedColumn, sortDirection);
   setDisplayedData(sortedData);
+};
+
+export const setDirectionAndColumn = (e, setSortDirection, setSortedColumn) => {
+  const targetClass = e.target.className;
+  switch (targetClass) {
+    case "asc":
+      setSortDirection("desc");
+      setSortedColumn(e.target.textContent);
+      break;
+    case "desc":
+      setSortDirection("asc");
+      setSortedColumn(e.target.textContent);
+      break;
+    default:
+      setSortDirection("asc");
+      setSortedColumn(e.target.textContent);
+      break;
+  }
+};
+
+export const creatPageLinks = (numberOfPage, setPageNumber) => {
+  const links = [];
+  for (let i = 0; i < numberOfPage; i++) {
+    const newPage = i + 1;
+    links.push(
+      <button key={i} onClick={() => setPageNumber(newPage)}>
+        {i + 1}
+      </button>
+    );
+  }
+  return links;
+};
+
+export const changePage = (e, setPageNumber, numberOfPage) => {
+  const buttonCliked = e.target.textContent;
+  switch (buttonCliked) {
+    case "Previous":
+      setPageNumber((page) => (page > 1 ? page - 1 : 1));
+      break;
+    case "Next":
+      setPageNumber((page) => (page < numberOfPage ? page + 1 : numberOfPage));
+      break;
+    default:
+  }
 };

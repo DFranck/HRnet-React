@@ -1,17 +1,17 @@
-import { creatLinks, handleClick } from "./tablePaginateFunction";
+import { creatPageLinks, changePage } from "../tableFunction";
 
 export const TablePaginate = ({
   displayLength,
   totalLength,
-  setNumberOfPage,
+  setPageNumber,
 }) => {
   const numberOfPage = Math.ceil(totalLength / displayLength);
-  const links = creatLinks(numberOfPage, setNumberOfPage);
+  const links = creatPageLinks(numberOfPage, setPageNumber);
   return (
     <div>
-      <button onClick={(e) => handleClick(e, setNumberOfPage)}>Previous</button>
+      <button onClick={(e) => changePage(e, setPageNumber)}>Previous</button>
       <span>{links}</span>
-      <button onClick={(e) => handleClick(e, setNumberOfPage, numberOfPage)}>
+      <button onClick={(e) => changePage(e, setPageNumber, numberOfPage)}>
         Next
       </button>
     </div>

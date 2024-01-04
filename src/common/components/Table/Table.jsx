@@ -1,22 +1,29 @@
+//dependencies
 import { useEffect, useState } from "react";
+//subComponents
 import { TableLenght } from "./TableLength/TableLength";
 import { TableFilter } from "./TableFilter/TableFilter";
 import { TableInfo } from "./TableInfo/TableInfo";
 import { TablePaginate } from "./TablePaginate/TablePaginate";
 import { TableHead } from "./TableHead/TableHead";
 import { TableBody } from "./TableBody/TableBody";
-import { tableFunction } from "./tableFunction";
+//minimals styles
 import "./table.css";
-export const Table = ({ data, width }) => {
-  const [numberOfPage, setNumberOfPage] = useState(1);
+//functions
+import { sortAndFilter } from "./tableFunction";
+
+export const Table = ({ data }) => {
+  const [pageNumber, setPageNumber] = useState(1);
   const [displayLength, setDisplayLength] = useState(10);
   const [displayedData, setDisplayedData] = useState(data);
   const [sortedColumn, setSortedColumn] = useState(Object.keys(data[0])[0]);
   const [sortDirection, setSortDirection] = useState("asc");
   const [inputValue, setInputValue] = useState("");
   const tableHeadContents = Object.keys(data[0]);
+
+  //useEffect for re-render when user sort or filter the table
   useEffect(() => {
-    tableFunction(
+    sortAndFilter(
       data,
       sortDirection,
       sortedColumn,
@@ -24,8 +31,9 @@ export const Table = ({ data, width }) => {
       setDisplayedData
     );
   }, [sortDirection, sortedColumn, inputValue]);
+
   return (
-    <section className="table" style={{ width: width }}>
+    <section className="table">
       <header className="table-header">
         <TableLenght setDisplayLength={setDisplayLength} />
         <TableFilter setInputValue={setInputValue} />
@@ -41,19 +49,19 @@ export const Table = ({ data, width }) => {
         <TableBody
           displayedData={displayedData}
           displayLength={displayLength}
-          numberOfPage={numberOfPage}
+          pageNumber={pageNumber}
         />
       </table>
       <footer className="table-footer">
         <TableInfo
           displayLength={displayLength}
           totalLength={displayedData.length}
-          numberOfPage={numberOfPage}
+          pageNumber={pageNumber}
         />
         <TablePaginate
           displayLength={displayLength}
           totalLength={displayedData.length}
-          setNumberOfPage={setNumberOfPage}
+          setPageNumber={setPageNumber}
         />
       </footer>
     </section>

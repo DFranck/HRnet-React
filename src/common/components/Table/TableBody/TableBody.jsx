@@ -1,7 +1,7 @@
-export const TableBody = ({ displayLength, numberOfPage, displayedData }) => {
+export const TableBody = ({ displayLength, pageNumber, displayedData }) => {
   const dataPage = displayedData.slice(
-    (numberOfPage - 1) * displayLength,
-    numberOfPage * displayLength
+    (pageNumber - 1) * displayLength,
+    pageNumber * displayLength
   );
   return (
     <tbody>
