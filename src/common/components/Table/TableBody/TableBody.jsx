@@ -16,35 +16,38 @@ export const TableBody = ({
   return (
     <tbody className="pmf-tableBody">
       {dataPage.length > 0 ? (
-        dataPage.map((tr, index) => (
+        dataPage.map((row, rowIndex) => (
           <tr
             role="row"
-            key={tr + index}
+            key={row + rowIndex}
             className={
-              index % 2 === 0
+              rowIndex % 2 === 0
                 ? "pmf-tableBody-row-odd"
                 : "pmf-tableBody-row-even"
             }
           >
-            {Object.values(tr).map((td, index) => (
+            {Object.values(row).map((cell, cellIndex) => (
               <td
-                key={td + index}
+                key={cell + cellIndex}
                 className={
-                  index === sortedColumnIndex
-                    ? td.index % 2 === 0
-                      ? "pmf-tableBody-cell-sorting-odd"
-                      : "pmf-tableBody-cell-sorting-even"
+                  cellIndex === sortedColumnIndex
+                    ? rowIndex % 2 === 0
+                      ? "pmf-tableBody-cell pmf-tableBody-cell-sorting-odd"
+                      : "pmf-tableBody-cell pmf-tableBody-cell-sorting-even"
                     : "pmf-tableBody-cell"
                 }
               >
-                {td}
+                {cell}
               </td>
             ))}
           </tr>
         ))
       ) : (
         <tr role="row">
-          <td colSpan={columnCount} className="pmf-tableBody-cell-noData">
+          <td
+            colSpan={columnCount}
+            className="pmf-tableBody-cell pmf-tableBody-cell-noData"
+          >
             No matching records found
           </td>
         </tr>
