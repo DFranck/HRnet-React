@@ -1,3 +1,4 @@
+import "./tableInfo.css";
 export const TableInfo = ({ displayLength, totalLength, pageNumber }) => {
   let firstNumber;
   let secondNumber;
