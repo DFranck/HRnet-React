@@ -52,6 +52,7 @@ export const Table = ({ data }) => {
           displayedData={displayedData}
           displayLength={displayLength}
           pageNumber={pageNumber}
+          sortedColumn={sortedColumn}
         />
       </table>
       <footer className="pmf-tableFooter">

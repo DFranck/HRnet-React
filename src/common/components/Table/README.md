@@ -143,6 +143,7 @@ Affiche les données du tableau dans le corps du tableau.
 - `displayedData={displayedData}`: Données à afficher dans le tableau.
 - `displayLength={displayLength}`: Nombre de lignes affichées par page.
 - `pageNumber={pageNumber}`: Page actuellement sélectionnée.
+- `sortedColumn={sortedColumn}`: colonne actuellement triée.
 
 #### Exemple d'utilisation
 
@@ -151,6 +152,7 @@ Affiche les données du tableau dans le corps du tableau.
   displayedData={displayedData}
   displayLength={displayLength}
   pageNumber={pageNumber}
+  sortedColumn={sortedColumn}
 />
 ```
 

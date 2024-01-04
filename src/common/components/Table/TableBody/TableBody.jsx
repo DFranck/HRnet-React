@@ -1,5 +1,10 @@
 import "./tableBody.css";
-export const TableBody = ({ displayLength, pageNumber, displayedData }) => {
+export const TableBody = ({
+  displayLength,
+  pageNumber,
+  displayedData,
+  sortedColumn,
+}) => {
   const dataPage = displayedData.slice(
     (pageNumber - 1) * displayLength,
     pageNumber * displayLength
