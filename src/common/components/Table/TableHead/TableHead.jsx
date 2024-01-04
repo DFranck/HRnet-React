@@ -1,4 +1,5 @@
 import { setDirectionAndColumn } from "../tableFunction";
+import "./tableHead.css";
 export const TableHead = ({
   sortDirection,
   sortedColumn,
@@ -7,8 +8,8 @@ export const TableHead = ({
   tableHeadContents,
 }) => {
   return (
-    <thead id="table-head">
-      <tr>
+    <thead className="pmf-tableHead">
+      <tr className="pmf-tableHead-row">
         {tableHeadContents.map((item, index) => (
           <th
             key={item + index}
