@@ -61,6 +61,7 @@ export const Table = ({ data }) => {
           displayLength={displayLength}
           totalLength={displayedData.length}
           pageNumber={pageNumber}
+          data={data}
         />
         <TablePaginate
           displayLength={displayLength}
