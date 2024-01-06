@@ -55,12 +55,22 @@ export const setDirectionAndColumn = (
   }
 };
 
-export const creatPageLinks = (numberOfPage, setPageNumber) => {
+export const creatPageLinks = (numberOfPage, setPageNumber, pageNumber) => {
   const links = [];
   for (let i = 0; i < numberOfPage; i++) {
     const newPage = i + 1;
     links.push(
-      <button key={i} onClick={() => setPageNumber(newPage)}>
+      <button
+        id={newPage}
+        className={
+          pageNumber === newPage
+            ? "pmf-tablePaginate-button-active pmf-tablePaginate-button-" +
+              newPage
+            : "pmf-tablePaginate-button pmf-tablePaginate-button-" + newPage
+        }
+        key={i}
+        onClick={(e) => changePage(e, setPageNumber)}
+      >
         {i + 1}
       </button>
     );
@@ -78,5 +88,6 @@ export const changePage = (e, setPageNumber, numberOfPage) => {
       setPageNumber((page) => (page < numberOfPage ? page + 1 : numberOfPage));
       break;
     default:
+      setPageNumber(parseInt(buttonCliked));
   }
 };

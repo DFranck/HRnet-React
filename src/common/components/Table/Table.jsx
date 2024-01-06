@@ -66,6 +66,7 @@ export const Table = ({ data }) => {
         <TablePaginate
           displayLength={displayLength}
           totalLength={displayedData.length}
+          pageNumber={pageNumber}
           setPageNumber={setPageNumber}
         />
       </footer>
