@@ -69,7 +69,7 @@ export const creatPageLinks = (numberOfPage, setPageNumber, pageNumber) => {
             : "pmf-tablePaginate-button pmf-tablePaginate-button-" + newPage
         }
         key={i}
-        onClick={(e) => changePage(e, setPageNumber, numberOfPage, pageNumber)}
+        onClick={(e) => changePage(e, setPageNumber, numberOfPage)}
       >
         {i + 1}
       </button>
@@ -78,7 +78,7 @@ export const creatPageLinks = (numberOfPage, setPageNumber, pageNumber) => {
   return links;
 };
 
-export const changePage = (e, setPageNumber, numberOfPage, pageNumber) => {
+export const changePage = (e, setPageNumber, numberOfPage) => {
   const buttonCliked = e.target.textContent;
   switch (buttonCliked) {
     case "Previous":

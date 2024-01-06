@@ -38,7 +38,10 @@ export const Table = ({ data }) => {
     <section className="pmf-tableWrapper">
       <header className="pmf-tableHeader">
         <TableLength setDisplayLength={setDisplayLength} />
-        <TableFilter setInputValue={setInputValue} />
+        <TableFilter
+          setInputValue={setInputValue}
+          setPageNumber={setPageNumber}
+        />
       </header>
       <table className="pmf-table">
         <TableHead
