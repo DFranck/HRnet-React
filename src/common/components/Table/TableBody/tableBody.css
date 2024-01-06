@@ -1,9 +1,12 @@
 .pmf-tableBody-cell {
+  max-width: 150px;
   border-top: 1px solid #ddd;
   padding: 8px 10px;
   box-sizing: content-box;
   display: table-cell;
-  vertical-align: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pmf-tableBody-row-odd,
