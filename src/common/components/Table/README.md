@@ -65,11 +65,12 @@ Permet de filtrer les données du tableau en fonction d'une chaîne de recherche
 #### Props
 
 - `setInputValue={setInputValue}`: Changement du state lors de la modification de la chaîne de recherche.
+- `setPageNumber={setPageNumber}`: Changement du state lors de la modification de la chaîne de recherche.
 
 #### Exemple d'utilisation
 
 ```jsx
-<TableFilter setInputValue={setInputValue} />
+<TableFilter setInputValue={setInputValue} setPageNumber={setPageNumber} />
 ```
 
 ### TableInfo
@@ -79,8 +80,9 @@ Affiche des informations sur les données actuellement visibles dans le tableau,
 #### Props
 
 - `displayLength={displayLength}`: Nombre de lignes affichées par page.
-- `totalLength={displayedData.length}`: Nombre total de lignes.
+- `totalLength={displayedData.length}`: Nombre total de lignes filtrées.
 - `pageNumber={pageNumber}` : Page actuellement sélectionnée.
+- `data={data}`: Pour afficher le nombre total de lignes non filtrées.
 
 #### Exemple d'utilisation
 
@@ -89,6 +91,7 @@ Affiche des informations sur les données actuellement visibles dans le tableau,
   displayLength={displayLength}
   totalLength={displayedData.length}
   pageNumber={pageNumber}
+  data={data}
 />
 ```
 
@@ -100,6 +103,7 @@ Fournit des contrôles de pagination pour naviguer entre les pages de données d
 
 - `displayLength={displayLength}`: Nombre de lignes affichées par page.
 - `totalLength={displayedData.length}`: Nombre total de data.
+- `pageNumber={pageNumber}`: Page actuellement sélectionnée.
 - `setPageNumber={setPageNumber}`: Permet de changer la Page actuellement sélectionnée.
 
 #### Exemple d'utilisation
@@ -108,6 +112,7 @@ Fournit des contrôles de pagination pour naviguer entre les pages de données d
 <TablePaginate
   displayLength={displayLength}
   totalLength={displayedData.length}
+  pageNumber={pageNumber}
   setPageNumber={setPageNumber}
 />
 ```
@@ -144,6 +149,7 @@ Affiche les données du tableau dans le corps du tableau.
 - `displayLength={displayLength}`: Nombre de lignes affichées par page.
 - `pageNumber={pageNumber}`: Page actuellement sélectionnée.
 - `sortedColumn={sortedColumn}`: colonne actuellement triée.
+- `tableHeadContents={tableHeadContents}`: nombre total de colones du tableau.
 
 #### Exemple d'utilisation
 
@@ -153,6 +159,7 @@ Affiche les données du tableau dans le corps du tableau.
   displayLength={displayLength}
   pageNumber={pageNumber}
   sortedColumn={sortedColumn}
+  tableHeadContents={tableHeadContents}
 />
 ```
 
@@ -168,11 +175,7 @@ Toutes les classes CSS principales de ce composant sont préfixées avec `pmf-` 
 
 - **Éléments de Base** : Les classes liées aux éléments de base du composant `Table` suivent le format `pmf-elementName`. Exemple : `pmf-table`, `pmf-tableHead`, `pmf-tableBody`.
 
-- **États et Variants** : Les classes qui définissent des états ou des variantes sont suffixées avec le nom de l'état ou de la variante. Exemple : `pmf-table--striped` pour une table avec des lignes zébrées.
-
-- **Enfants et Sous-éléments** : Les classes des sous-éléments ou des éléments enfants suivent le format `pmf-elementName_childName`. Exemple : `pmf-table_row`, `pmf-table_cell`.
-
-- **Modificateurs** : Les classes modificateurs qui changent l'apparence ou le comportement de manière significative utilisent le format `pmf-elementName--modifierName`. Exemple : `pmf-table--responsive`.
+- **Enfants et Sous-éléments** : Les classes des sous-éléments ou des éléments enfants suivent le format `pmf-elementName-childName`. Exemple : `pmf-table-row`, `pmf-table-cell`.
 
 ### Exemples
 
