@@ -1,8 +1,8 @@
 {
-  "main": "Table.jsx",
+  "main": "dist/pmf-Table.es.js",
   "name": "pmf-table",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "build:table": "vite build --config vite.config.table.js"
