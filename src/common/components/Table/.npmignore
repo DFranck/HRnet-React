@@ -1,8 +1,0 @@
-# Ignore everything
-*
-
-# But not these files and directories
-!dist
-!src/common/components/Table/package.json
-!src/common/components/Table/README.md
-
