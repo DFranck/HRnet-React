@@ -11,9 +11,12 @@
   padding: 0.4em 1em;
   cursor: pointer;
   padding-right: 1rem;
-  /* margin-bottom: 1rem; */
 }
 option {
-  background-color: #f8f8f8; /* Exemple de couleur de fond */
-  color: #333; /* Couleur du texte */
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.submit {
+  margin-top: 1rem;
 }
