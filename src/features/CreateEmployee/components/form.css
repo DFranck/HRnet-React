@@ -1,0 +1,19 @@
+.select {
+  width: 16em;
+  text-align: left;
+  border-radius: 3px;
+  white-space: nowrap;
+  border: 1px solid #c5c5c5;
+  background: #f6f6f6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  padding: 0.4em 1em;
+  cursor: pointer;
+  padding-right: 1rem;
+  /* margin-bottom: 1rem; */
+}
+option {
+  background-color: #f8f8f8; /* Exemple de couleur de fond */
+  color: #333; /* Couleur du texte */
+}

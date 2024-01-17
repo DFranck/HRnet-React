@@ -1,8 +1,8 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Select from "react-select";
 import states from "../states.jsx";
+import "./form.css";
 import {
   updateFirstName,
   updateLastName,
@@ -73,13 +73,18 @@ export const Form = () => {
           />
 
           <label htmlFor="state">State</label>
-          <Select
+          <select
             name="state"
             id="state"
-            options={states}
+            className="select"
             onChange={(e) => dispatch(updateState(e.abbreviation))}
-          />
-
+          >
+            {states.map((state) => (
+              <option key={state.abbreviation} className="option">
+                {state.label}
+              </option>
+            ))}
+          </select>
           <label htmlFor="zip-code">Zip Code</label>
           <input
             id="zip-code"
@@ -88,16 +93,18 @@ export const Form = () => {
           />
         </fieldset>
         <label htmlFor="department">Department</label>
+
         <select
           name="department"
           id="department"
+          className="select"
           onChange={(e) => dispatch(updateDepartment(e.target.value))}
         >
-          <option>Sales</option>
-          <option>Marketing</option>
-          <option>Engineering</option>
-          <option>Human Resources</option>
-          <option>Legal</option>
+          <option className="option">Sales</option>
+          <option className="option">Marketing</option>
+          <option className="option">Engineering</option>
+          <option className="option">Human Resources</option>
+          <option className="option">Legal</option>
         </select>
       </form>
     </>
