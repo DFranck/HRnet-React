@@ -3,6 +3,10 @@
 render a table with a list of items from props : data={YOURDATA}
 optimize for desktop and users data.
 
+## version de node utilisé :
+
+v18.18.2
+
 ## Structure du Composant
 
 Le composant `Table` est organisé en plusieurs sous-composants pour une clarté maximale et une réutilisation efficace. Chaque sous-composant a un rôle spécifique dans l'affichage et la gestion des données du tableau. Voici la disposition et la description de chaque sous-composant :
@@ -20,6 +24,12 @@ les `fonctions` sont executé par les sous-composants mais sont gérées dans un
 ## Utilisation du Composant `Table`
 
 Pour utiliser le composant `Table`, passez les données sous forme d'un tableau d'objets à la prop `data` :
+
+## Commande d'installation
+
+```
+npm i pmf-table
+```
 
 ### Props
 
