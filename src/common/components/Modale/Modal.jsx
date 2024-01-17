@@ -8,13 +8,13 @@ export const Modal = () => {
   if (showModal === true)
     return (
       <div id="confirmation" className="modal">
-        <h1>Employee Created!</h1>
-        <button
-          className="close-modal"
-          onClick={() => dispatch(setShowModal(false))}
-        >
-          X
-        </button>
+        <div className="modal-content">
+          <p>Employee Created!</p>
+          <span
+            className="close-modal"
+            onClick={() => dispatch(setShowModal(false))}
+          ></span>
+        </div>
       </div>
     );
 };

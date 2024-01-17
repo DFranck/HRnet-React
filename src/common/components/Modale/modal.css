@@ -13,8 +13,32 @@
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.75);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  position: relative;
+}
+.close-modal {
+  position: absolute;
+  top: 0px;
+  right: -12.5px;
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../assets/icons/black-cross.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
 }
 
-.modal h1 {
+.modal p {
+  width: 90vw;
+  max-width: 500px;
+  padding: 15px 30px;
   background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
+  text-align: left;
 }
