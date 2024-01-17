@@ -49,6 +49,11 @@ npm i pmf-table
 
 #### Exemple d'utilisation
 
+```
+import { Table } from "pmf-table";
+import "pmf-table/style.css";
+```
+
 ```jsx
 <Table data={data} />
 ```

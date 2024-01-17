@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { Table } from "../../common/components/Table/Table";
+// import { Table } from "../../common/components/Table/Table";
+import { Table } from "pmf-table";
+import "pmf-table/style.css";
 import { useSelector } from "react-redux";
 import dataMock from "../../mock/employee.json";
 export const EmployeeList = () => {
