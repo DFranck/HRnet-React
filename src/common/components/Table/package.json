@@ -1,8 +1,8 @@
 {
-  "main": "dist/pmf-Table.umd.js",
+  "main": "dist/pmf-Table.es.js",
   "name": "pmf-table",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.4",
   "type": "module",
   "engines": {
     "node": ">=18.18.2"
