@@ -2,14 +2,13 @@
   "main": "dist/pmf-Table.es.js",
   "name": "pmf-table",
   "private": false,
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "engines": {
     "node": ">=18.18.2"
   },
   "author": "Dufournet Franck",
   "scripts": {
-    "preinstall": "node scripts/check-node-version.js",
     "build:table": "vite build --config vite.config.table.js"
   },
   "dependencies": {

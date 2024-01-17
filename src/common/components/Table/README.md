@@ -1,4 +1,4 @@
-# pmf-Table v 0.1.4
+# pmf-Table v 0.1.5
 
 render a table with a list of items from props : data={YOURDATA}
 optimize for desktop and users data.
