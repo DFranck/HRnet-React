@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:table": "vite build --config vite.config.table.js",
     "preview": "vite preview"
   },
   "dependencies": {
