@@ -1,4 +1,4 @@
-# pmf-Table v 0.1.5
+# pmf-Table v 0.1.1
 
 render a table with a list of items from props : data={YOURDATA}
 optimize for desktop and users data.
@@ -24,6 +24,11 @@ les `fonctions` sont executé par les sous-composants mais sont gérées dans un
 ## Utilisation du Composant `Table`
 
 Pour utiliser le composant `Table`, passez les données sous forme d'un tableau d'objets à la prop `data` :
+
+```
+import { Table } from "pmf-table";
+import "pmf-table/style.css";
+```
 
 ## Commande d'installation
 
