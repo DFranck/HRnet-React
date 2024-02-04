@@ -1,0 +1,25 @@
+@use "./variables.scss" as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.3s;
+  main {
+    padding: 50px 0;
+    &.light {
+      background-color: var.$LightBackground;
+      color: var.$LightText;
+    }
+    &.dark {
+      background-color: var.$DarkBackground;
+      color: var.$DarkText;
+    }
+    section {
+      max-width: 1176px;
+      margin: 0 auto;
+    }
+  }
+}

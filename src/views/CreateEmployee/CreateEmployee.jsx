@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
-import { Form } from "../../features/CreateEmployee/components/Form";
+import { useSelector } from "react-redux";
+import { Header } from "../../common/components/Header/Header";
 import { Modal } from "../../common/components/Modale/Modal";
+import { Nav } from "../../common/components/Nav/Nav";
 import { CreateEmployeeBtn } from "../../features/CreateEmployee/components/CreateEmployeeBtn";
+import { Form } from "../../features/CreateEmployee/components/Form";
 export const CreateEmployee = () => {
+  const theme = useSelector((state) => state.theme.theme);
   return (
-    <main>
+    <main className={theme}>
       <section className="container">
-        <h1 className="title">HRnet</h1>
-        <Link to="/employee-list">View Current Employees</Link>
-        <h2>Create Employee</h2>
+        <Header />
+        <Nav />
         <Form />
         <CreateEmployeeBtn />
       </section>
