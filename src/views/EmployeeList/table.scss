@@ -1,0 +1,146 @@
+@use "../../styles/variables.scss" as var;
+main {
+  .pmf-tableWrapper {
+    width: 100%;
+  }
+  header.pmf-tableHeader {
+    background-color: none;
+    .pmf-tableFilter-label,
+    .pmf-tableLength-label {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      select#pmf-tableLength-select {
+        margin: 0 1rem;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+      input {
+        border-radius: 10px;
+        padding: 0.5rem;
+        font-size: 1rem;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  .pmf-tableBody-cell {
+    border-top: none;
+    padding: 0.75rem;
+  }
+  &.light {
+    select {
+      background-color: rgba(var.$LightText, 0.1);
+      color: var.$LightText;
+      &:focus {
+        background-color: var.$LightBackground;
+      }
+    }
+    input {
+      border: 2px solid transparent;
+      background-color: rgba(var.$LightText, 0.1);
+      color: var.$LightText;
+      &:focus {
+        border: 2px solid var.$LightText;
+      }
+    }
+    table.pmf-table {
+      color: var.$LightText;
+
+      th {
+        background-color: none;
+        padding: 1rem;
+        border-bottom: 1px solid var.$LightTitle;
+        color: var.$LightText;
+      }
+      tbody {
+        tr {
+          &.pmf-tableBody-row-odd {
+            background-color: rgba(var.$LightText, 0.1);
+            &:hover {
+              background-color: rgba(var.$LightTitle, 0.2);
+            }
+          }
+          &.pmf-tableBody-row-even {
+            background-color: rgba(var.$LightBackground, 1);
+            &:hover {
+              background-color: rgba(var.$LightTitle, 0.2);
+            }
+          }
+          td {
+            &.pmf-tableBody-cell-sorting-odd {
+              background-color: rgba(var.$LightTitle, 0.2) !important;
+            }
+            &.pmf-tableBody-cell-sorting-even {
+              background-color: rgba(var.$LightTitle, 0.2) !important;
+            }
+          }
+        }
+      }
+    }
+    .pmf-tableBody-row-odd:hover .pmf-tableBody-cell,
+    .pmf-tableBody-row-even:hover .pmf-tableBody-cell {
+      background-color: rgba(var.$LightTitle, 0.1);
+    }
+    footer.pmf-tableFooter {
+      // background-color: red;
+    }
+  }
+  &.dark {
+    select {
+      background-color: rgba(var.$DarkText, 0.1);
+      color: var.$DarkText;
+      &:focus {
+        background-color: var.$DarkBackground;
+      }
+    }
+    input {
+      border: 2px solid transparent;
+      background-color: rgba(var.$DarkText, 0.1);
+      color: var.$DarkText;
+      &:focus {
+        border: 2px solid var.$DarkText;
+      }
+    }
+    table.pmf-table {
+      color: var.$DarkText;
+      th {
+        background-color: none;
+        padding: 1rem;
+        border-bottom: 1px solid var.$DarkTitle;
+        color: var.$DarkText;
+      }
+      tbody {
+        tr {
+          &.pmf-tableBody-row-odd {
+            background-color: rgba(var.$DarkText, 0.1);
+            &:hover {
+              background-color: rgba(var.$DarkTitle, 0.2);
+            }
+          }
+          &.pmf-tableBody-row-even {
+            background-color: rgba(var.$DarkBackground, 1);
+            &:hover {
+              background-color: rgba(var.$DarkTitle, 0.2);
+            }
+          }
+          td {
+            &.pmf-tableBody-cell-sorting-odd {
+              background-color: rgba(var.$DarkTitle, 0.2) !important;
+            }
+            &.pmf-tableBody-cell-sorting-even {
+              background-color: rgba(var.$DarkTitle, 0.2) !important;
+            }
+          }
+        }
+      }
+    }
+    .pmf-tableBody-row-odd:hover .pmf-tableBody-cell,
+    .pmf-tableBody-row-even:hover .pmf-tableBody-cell {
+      background-color: rgba(var.$DarkTitle, 0.1);
+    }
+  }
+}

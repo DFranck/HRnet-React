@@ -1,0 +1,6 @@
+@use "../../../styles/variables.scss" as var;
+.input-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

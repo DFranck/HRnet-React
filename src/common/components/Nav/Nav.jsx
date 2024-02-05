@@ -4,7 +4,6 @@ import "./nav.scss";
 export const Nav = () => {
   const theme = useSelector((state) => state.theme.theme);
   const location = useLocation();
-  console.log(location);
   return (
     <nav className="HRnet-nav">
       <ul
@@ -18,7 +17,7 @@ export const Nav = () => {
             location.pathname === "/employee-list" ? "active" : ""
           }`}
         >
-          <Link to="/employee-list">View Current Employees</Link>
+          <Link to="/employee-list">Current Employees</Link>
         </li>
       </ul>
     </nav>

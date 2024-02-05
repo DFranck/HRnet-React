@@ -1,0 +1,23 @@
+@use "../../../styles/variables.scss" as var;
+button.submit {
+  margin: 1.125rem auto;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  &.dark {
+    background-color: rgba(var.$DarkText, $alpha: 0.1);
+    color: var.$DarkText;
+    &:hover {
+      background-color: rgba(var.$DarkText, $alpha: 0.3);
+    }
+  }
+  &.light {
+    background-color: rgba(var.$LightText, $alpha: 0.1);
+    color: var.$LightText;
+    &:hover {
+      background-color: rgba(var.$LightText, $alpha: 0.3);
+    }
+  }
+}

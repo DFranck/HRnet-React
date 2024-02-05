@@ -1,82 +1,107 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import states from "../states.jsx";
-import "./form.css";
+import { useDispatch, useSelector } from "react-redux";
+import { Input } from "../../../common/components/Input/input.jsx";
 import {
+  updateCity,
+  updateDateOfBirth,
+  updateDepartment,
   updateFirstName,
   updateLastName,
-  updateDateOfBirth,
   updateStartDate,
-  updateStreet,
-  updateCity,
   updateState,
+  updateStreet,
   updateZipCode,
-  updateDepartment,
 } from "../formInputsSlice.jsx";
-import { useDispatch } from "react-redux";
+import states from "../states.jsx";
+import "./form.scss";
 export const Form = () => {
   const dispatch = useDispatch();
   const [startDate, setStartDate] = useState();
   const [birthDate, setBirthDate] = useState();
+  const theme = useSelector((state) => state.theme.theme);
+  const onChange = (e) => {
+    switch (e.target.id) {
+      case "First Name":
+        dispatch(updateFirstName(e.target.value));
+        break;
+      case "Last Name":
+        dispatch(updateLastName(e.target.value));
+      case "Street":
+        dispatch(updateStreet(e.target.value));
+        break;
+      case "City":
+        dispatch(updateCity(e.target.value));
+        break;
+      case "State":
+        dispatch(updateState(e.target.value));
+        break;
+      case "Zip-code":
+        dispatch(updateZipCode(e.target.value));
+        break;
+      case "Department":
+        dispatch(updateDepartment(e.target.value));
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <>
       <form action="#" id="create-employee">
-        <label htmlFor="first-name">First Name</label>
-        <input
-          type="text"
-          id="first-name"
-          onChange={(e) => dispatch(updateFirstName(e.target.value))}
-        />
-        <label htmlFor="last-name">Last Name</label>
-        <input
-          type="text"
-          id="last-name"
-          onChange={(e) => dispatch(updateLastName(e.target.value))}
-        />
-        <label htmlFor="date-of-birth">Date of Birth</label>
-        <DatePicker
-          id="date-of-birth"
-          selected={birthDate}
-          onChange={(date) => {
-            setBirthDate(date);
-            dispatch(updateDateOfBirth(date.toLocaleDateString("eg-EG")));
-          }}
-          autoComplete="off"
-        />
-        <label htmlFor="start-date">Start Date</label>
-
-        <DatePicker
-          id="start-date"
-          selected={startDate}
-          onChange={(date, e) => {
-            setStartDate(date);
-            dispatch(updateStartDate(date.toLocaleDateString("eg-EG")));
-          }}
-          autoComplete="off"
-        />
+        <fieldset className="personal">
+          <legend className={theme}>Personal</legend>
+          <Input
+            type="text"
+            label="First Name"
+            onChange={onChange}
+            theme={theme}
+          />
+          <Input
+            type="text"
+            label="Last Name"
+            onChange={onChange}
+            theme={theme}
+          />
+          <label htmlFor="date-of-birth" className={theme}>
+            Date of Birth
+          </label>
+          <DatePicker
+            id="date-of-birth"
+            className={theme}
+            selected={birthDate}
+            onChange={(date) => {
+              setBirthDate(date);
+              dispatch(updateDateOfBirth(date.toLocaleDateString("eg-EG")));
+            }}
+            autoComplete="off"
+          />
+          <label htmlFor="start-date" className={theme}>
+            Start Date
+          </label>
+          <DatePicker
+            id="start-date"
+            className={theme}
+            selected={startDate}
+            onChange={(date, e) => {
+              setStartDate(date);
+              dispatch(updateStartDate(date.toLocaleDateString("eg-EG")));
+            }}
+            autoComplete="off"
+          />
+        </fieldset>
         <fieldset className="address">
-          <legend>Address</legend>
-
-          <label htmlFor="street">Street</label>
-          <input
-            id="street"
-            type="text"
-            onChange={(e) => dispatch(updateStreet(e.target.value))}
-          />
-
-          <label htmlFor="city">City</label>
-          <input
-            id="city"
-            type="text"
-            onChange={(e) => dispatch(updateCity(e.target.value))}
-          />
-
-          <label htmlFor="state">State</label>
+          <legend className={theme}>Address</legend>
+          <Input type="text" label="Street" onChange={onChange} theme={theme} />
+          <Input type="text" label="City" onChange={onChange} theme={theme} />
+          <label htmlFor="state" className={theme}>
+            State
+          </label>
           <select
             name="state"
             id="state"
-            className="select"
+            className={"select " + theme}
             onChange={(e) => dispatch(updateState(e.abbreviation))}
           >
             {states.map((state) => (
@@ -85,27 +110,32 @@ export const Form = () => {
               </option>
             ))}
           </select>
-          <label htmlFor="zip-code">Zip Code</label>
-          <input
-            id="zip-code"
-            type="number"
-            onChange={(e) => dispatch(updateZipCode(e.target.value))}
+          <Input
+            type="text"
+            label="Zip Code"
+            onChange={onChange}
+            theme={theme}
           />
         </fieldset>
-        <label htmlFor="department">Department</label>
+        <fieldset className="position">
+          <legend className={theme}>Position</legend>
+          <label htmlFor="department" className={theme}>
+            Department
+          </label>
 
-        <select
-          name="department"
-          id="department"
-          className="select"
-          onChange={(e) => dispatch(updateDepartment(e.target.value))}
-        >
-          <option className="option">Sales</option>
-          <option className="option">Marketing</option>
-          <option className="option">Engineering</option>
-          <option className="option">Human Resources</option>
-          <option className="option">Legal</option>
-        </select>
+          <select
+            name="department"
+            id="department"
+            className={"select " + theme}
+            onChange={(e) => dispatch(updateDepartment(e.target.value))}
+          >
+            <option className="option">Sales</option>
+            <option className="option">Marketing</option>
+            <option className="option">Engineering</option>
+            <option className="option">Human Resources</option>
+            <option className="option">Legal</option>
+          </select>
+        </fieldset>
       </form>
     </>
   );
