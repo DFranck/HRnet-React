@@ -8,15 +8,15 @@
       &.right {
         background: linear-gradient(
           270deg,
-          rgba(226, 221, 254, 0.2) 0%,
-          rgba(20, 18, 31, 0.2) 100%
+          rgba(var.$DarkText, 0.2) 0%,
+          rgba(var.$DarkBackground, 0.2) 100%
         );
       }
       &.left {
         background: linear-gradient(
           90deg,
-          rgba(226, 221, 254, 0.2) 0%,
-          rgba(20, 18, 31, 0.2) 100%
+          rgba(var.$DarkText, 0.2) 0%,
+          rgba(var.$DarkBackground, 0.2) 100%
         );
       }
     }
@@ -24,15 +24,15 @@
       &.right {
         background: linear-gradient(
           270deg,
-          rgba(47, 38, 95, 0.3) 0%,
-          rgba(253, 252, 254, 0.3) 100%
+          rgba(var.$LightText, 0.3) 0%,
+          rgba(var.$LightBackground, 0.3) 100%
         );
       }
       &.left {
         background: linear-gradient(
           90deg,
-          rgba(47, 38, 95, 0.3) 0%,
-          rgba(253, 252, 254, 0.3) 100%
+          rgba(var.$LightText, 0.3) 0%,
+          rgba(var.$LightBackground, 0.3) 100%
         );
       }
     }

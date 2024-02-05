@@ -1,0 +1,33 @@
+@use "./variables.scss" as var;
+@keyframes toRightTransition {
+  0% {
+    background: linear-gradient(
+      90deg,
+      rgba(var.$DarkText, 0.2) 0%,
+      rgba(var.$DarkBackground, 0.2) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      270deg,
+      rgba(var.$DarkText, 0.2) 0%,
+      rgba(var.$DarkBackground, 0.2) 100%
+    );
+  }
+}
+@keyframes toLeftTransition {
+  0% {
+    background: linear-gradient(
+      270deg,
+      rgba(var.$DarkText, 0.2) 0%,
+      rgba(var.$DarkBackground, 0.2) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      90deg,
+      rgba(var.$DarkText, 0.2) 0%,
+      rgba(var.$DarkBackground, 0.2) 100%
+    );
+  }
+}

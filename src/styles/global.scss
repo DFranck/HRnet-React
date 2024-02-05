@@ -1,12 +1,12 @@
 @use "./variables.scss" as var;
-
+@use "./keyframes.scss" as key;
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  transition: 0.3s;
+  transition: background 0.3s ease;
   font-family: "Inter", sans-serif;
   main {
     padding: 50px 0;
