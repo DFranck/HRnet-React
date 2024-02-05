@@ -7,7 +7,7 @@ main {
     background-color: none;
     .pmf-tableFilter-label,
     .pmf-tableLength-label {
-      font-size: 1.5rem;
+      font-size: 1rem;
       display: flex;
       align-items: center;
       select#pmf-tableLength-select {
@@ -24,6 +24,16 @@ main {
         &:focus {
           outline: none;
         }
+      }
+    }
+  }
+  footer.pmf-tableFooter {
+    padding: 1rem 0;
+    font-size: 1rem;
+    .pmf-tablePaginate {
+      button {
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
       }
     }
   }
@@ -86,7 +96,29 @@ main {
       background-color: rgba(var.$LightTitle, 0.1);
     }
     footer.pmf-tableFooter {
-      // background-color: red;
+      .pmf-tablePaginate {
+        button {
+          color: var.$LightText;
+          &:hover {
+            background: none;
+            border: 1px solid rgba(var.$LightText, 0.1);
+            background-color: rgba(var.$LightText, 0.2);
+          }
+          &.pmf-tablePaginate-button-active {
+            border: 1px solid var.$LightInteractive;
+            margin: 0 2px;
+            background: linear-gradient(
+              to bottom,
+              var.$LightInteractive 0%,
+              rgba(var.$LightTitle, 0.1) 100%
+            );
+          }
+          &.pmf-tablePaginate-button-disabled {
+            border: 1px solid transparent;
+            background: transparent;
+          }
+        }
+      }
     }
   }
   &.dark {
@@ -141,6 +173,31 @@ main {
     .pmf-tableBody-row-odd:hover .pmf-tableBody-cell,
     .pmf-tableBody-row-even:hover .pmf-tableBody-cell {
       background-color: rgba(var.$DarkTitle, 0.1);
+    }
+    footer.pmf-tableFooter {
+      .pmf-tablePaginate {
+        button {
+          color: var.$DarkText;
+          &:hover {
+            background: none;
+            border: 1px solid rgba(var.$DarkText, 0.1);
+            background-color: rgba(var.$DarkText, 0.2);
+          }
+          &.pmf-tablePaginate-button-active {
+            border: 1px solid var.$DarkInteractive;
+            margin: 0 2px;
+            background: linear-gradient(
+              to bottom,
+              var.$DarkInteractive 0%,
+              rgba(var.$DarkTitle, 0.1) 100%
+            );
+          }
+          &.pmf-tablePaginate-button-disabled {
+            border: 1px solid transparent;
+            background: transparent;
+          }
+        }
+      }
     }
   }
 }
