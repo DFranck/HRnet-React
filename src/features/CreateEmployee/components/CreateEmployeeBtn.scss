@@ -5,6 +5,8 @@ button.submit {
   border: none;
   border-radius: 10px;
   font-size: 1.5rem;
+  opacity: 0;
+  animation: toShow 0.5s forwards;
   cursor: pointer;
   &.dark {
     background-color: rgba(var.$DarkText, $alpha: 0.1);

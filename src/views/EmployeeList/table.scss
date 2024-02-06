@@ -2,6 +2,8 @@
 main {
   .pmf-tableWrapper {
     width: 100%;
+    opacity: 0;
+    animation: toShow 0.5s forwards;
   }
   header.pmf-tableHeader {
     background-color: none;
@@ -40,6 +42,11 @@ main {
   .pmf-tableBody-cell {
     border-top: none;
     padding: 0.75rem;
+    opacity: 0.5;
+    animation: toShow 0.5s forwards;
+    &.pmf-tableBody-cell-noData {
+      background: none;
+    }
   }
   &.light {
     select {
@@ -59,7 +66,7 @@ main {
     }
     table.pmf-table {
       color: var.$LightText;
-
+      border-bottom: 1px solid var.$LightTitle;
       th {
         background-color: none;
         padding: 1rem;
@@ -139,6 +146,7 @@ main {
     }
     table.pmf-table {
       color: var.$DarkText;
+      border-bottom: 1px solid var.$DarkTitle;
       th {
         background-color: none;
         padding: 1rem;

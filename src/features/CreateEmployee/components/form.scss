@@ -2,6 +2,8 @@
 #create-employee {
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  animation: toShow 0.5s forwards;
   fieldset {
     display: flex;
     flex-direction: column;
