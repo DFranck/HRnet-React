@@ -40,6 +40,9 @@
       &.dark {
         background-color: rgba(var.$DarkText, $alpha: 0.1);
         color: var.$DarkText;
+        option {
+          background-color: var.$DarkBackground;
+        }
         &:focus {
           outline: none;
           border: 2px solid var.$DarkText;
@@ -48,6 +51,9 @@
       &.light {
         background-color: rgba(var.$LightText, $alpha: 0.1);
         color: var.$LightText;
+        option {
+          background-color: var.$LightBackground;
+        }
         &:focus {
           outline: none;
           border: 2px solid var.$LightText;
