@@ -2,30 +2,85 @@
 .HRnet-nav {
   margin: 50px 0;
   ul {
+    position: relative;
     border-radius: 10px;
     display: flex;
     &.dark {
       &.right {
-        background: linear-gradient(
-          270deg,
-          rgba(var.$DarkText, 0.2) 0%,
-          rgba(var.$DarkBackground, 0.2) 100%
-        );
+        &::before {
+          content: "";
+          position: absolute;
+          border-radius: 10px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          background: linear-gradient(
+            to right,
+            rgba(var.$DarkText, 0.2) 0%,
+            rgba(var.$DarkBackground, 0.2) 100%
+          );
+          animation: toHide 0.5s forwards;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          border-radius: 10px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          background: linear-gradient(
+            to right,
+            rgba(var.$DarkBackground, 0.2) 0%,
+            rgba(var.$DarkText, 0.2) 100%
+          );
+          animation: toShow 0.5s forwards;
+        }
       }
       &.left {
-        background: linear-gradient(
-          90deg,
-          rgba(var.$DarkText, 0.2) 0%,
-          rgba(var.$DarkBackground, 0.2) 100%
-        );
+        &::before {
+          content: "";
+          position: absolute;
+          border-radius: 10px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+          background: linear-gradient(
+            to right,
+            rgba(var.$DarkBackground, 0.2) 0%,
+            rgba(var.$DarkText, 0.2) 100%
+          );
+          animation: toHide 0.5s forwards;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          border-radius: 10px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          background: linear-gradient(
+            to right,
+            rgba(var.$DarkText, 0.2) 0%,
+            rgba(var.$DarkBackground, 0.2) 100%
+          );
+          animation: toShow 0.5s forwards;
+        }
       }
     }
     &.light {
       &.right {
         background: linear-gradient(
-          270deg,
-          rgba(var.$LightText, 0.3) 0%,
-          rgba(var.$LightBackground, 0.3) 100%
+          90deg,
+          rgba(var.$LightBackground, 0.3) 0%,
+          rgba(var.$LightText, 0.3) 100%
         );
       }
       &.left {
@@ -37,6 +92,7 @@
       }
     }
     li {
+      z-index: 1;
       width: 50%;
       height: 85px;
       font-size: 1.5rem;
