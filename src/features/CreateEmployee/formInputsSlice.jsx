@@ -8,9 +8,9 @@ export const formInputsSlice = createSlice({
     startDate: "",
     street: "",
     city: "",
-    state: "",
+    state: "Alabama",
     zipCode: "",
-    department: "",
+    department: "Sales",
   },
   reducers: {
     resetForm: (state) => {
@@ -21,9 +21,9 @@ export const formInputsSlice = createSlice({
       state.startDate = "";
       state.street = "";
       state.city = "";
-      state.state = "";
+      state.state = "Alabama";
       state.zipCode = "";
-      state.department = "";
+      state.department = "Sales";
     },
     updateFirstName: (state, action) => {
       console.log("new first name", action.payload);

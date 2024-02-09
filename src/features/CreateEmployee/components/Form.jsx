@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,6 +21,8 @@ export const Form = () => {
   const [startDate, setStartDate] = useState();
   const [birthDate, setBirthDate] = useState();
   const theme = useSelector((state) => state.theme.theme);
+  const values = useSelector((state) => state.formInputs);
+  const modale = useSelector((state) => state.createEmployee.showModal);
   const onChange = (e) => {
     switch (e.target.id) {
       case "First Name":
@@ -28,6 +30,7 @@ export const Form = () => {
         break;
       case "Last Name":
         dispatch(updateLastName(e.target.value));
+        break;
       case "Street":
         dispatch(updateStreet(e.target.value));
         break;
@@ -37,7 +40,7 @@ export const Form = () => {
       case "State":
         dispatch(updateState(e.target.value));
         break;
-      case "Zip-code":
+      case "Zip Code":
         dispatch(updateZipCode(e.target.value));
         break;
       case "Department":
@@ -47,6 +50,12 @@ export const Form = () => {
         break;
     }
   };
+  useEffect(() => {
+    if (modale) {
+      setStartDate("");
+      setBirthDate("");
+    }
+  });
   return (
     <>
       <form action="#" id="create-employee">
@@ -57,12 +66,14 @@ export const Form = () => {
             label="First Name"
             onChange={onChange}
             theme={theme}
+            value={values.firstName}
           />
           <Input
             type="text"
             label="Last Name"
             onChange={onChange}
             theme={theme}
+            value={values.lastName}
           />
           <label htmlFor="date-of-birth" className={theme}>
             Date of Birth
@@ -93,8 +104,20 @@ export const Form = () => {
         </fieldset>
         <fieldset className="address">
           <legend className={theme}>Address</legend>
-          <Input type="text" label="Street" onChange={onChange} theme={theme} />
-          <Input type="text" label="City" onChange={onChange} theme={theme} />
+          <Input
+            type="text"
+            label="Street"
+            onChange={onChange}
+            theme={theme}
+            value={values.street}
+          />
+          <Input
+            type="text"
+            label="City"
+            onChange={onChange}
+            theme={theme}
+            value={values.city}
+          />
           <label htmlFor="state" className={theme}>
             State
           </label>
@@ -115,6 +138,7 @@ export const Form = () => {
             label="Zip Code"
             onChange={onChange}
             theme={theme}
+            value={values.zipCode}
           />
         </fieldset>
         <fieldset className="position">

@@ -6,13 +6,14 @@ import { Nav } from "../../common/components/Nav/Nav.jsx";
 import "./table.scss";
 export const EmployeeList = () => {
   const theme = useSelector((state) => state.theme.theme);
+  const data = useSelector((state) => state.createEmployee.employees);
   return (
     <main className={theme}>
       <section id="employee-div" className="container">
         <Header />
         <Nav />
         {/* <Table data={dataMock} /> */}
-        <Table />
+        <Table data={data} />
       </section>
     </main>
   );
