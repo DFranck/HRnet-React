@@ -37,14 +37,8 @@ export const Form = () => {
       case "City":
         dispatch(updateCity(e.target.value));
         break;
-      case "State":
-        dispatch(updateState(e.target.value));
-        break;
       case "Zip Code":
         dispatch(updateZipCode(e.target.value));
-        break;
-      case "Department":
-        dispatch(updateDepartment(e.target.value));
         break;
       default:
         break;
@@ -125,7 +119,9 @@ export const Form = () => {
             name="state"
             id="state"
             className={"select " + theme}
-            onChange={(e) => dispatch(updateState(e.abbreviation))}
+            onChange={(e) =>
+              dispatch(updateState(e.target.value.slice(0, 2).toUpperCase()))
+            }
           >
             {states.map((state) => (
               <option key={state.abbreviation} className="option">
