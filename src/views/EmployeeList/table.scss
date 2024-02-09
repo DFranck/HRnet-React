@@ -1,5 +1,6 @@
 @use "../../styles/variables.scss" as var;
 main {
+  min-height: 100vh;
   .pmf-tableWrapper {
     width: 100%;
     opacity: 0;
