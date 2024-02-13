@@ -9,7 +9,6 @@
   transition: background 0.3s ease;
   font-family: "Inter", sans-serif;
   main {
-    padding: 50px 0;
     &.light {
       background-color: var.$LightBackground;
       color: var.$LightText;
@@ -19,10 +18,22 @@
       color: var.$DarkText;
     }
     section {
-      max-width: 1176px;
+      max-width: calc(1176px + 5rem);
+      padding: 50px 5rem;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
+      @media screen and (max-width: 768px) {
+        padding: 50px 1rem;
+      }
+      &.light {
+        background-color: var.$LightBackground;
+        color: var.$LightText;
+      }
+      &.dark {
+        background-color: var.$DarkBackground;
+        color: var.$DarkText;
+      }
     }
   }
 }

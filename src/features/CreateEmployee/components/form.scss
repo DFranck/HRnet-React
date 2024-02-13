@@ -2,14 +2,20 @@
 #create-employee {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   opacity: 0;
   animation: toShow 0.5s forwards;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
   fieldset {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 2rem;
     border: none;
+    width: calc(100% / 3);
+    min-width: 300px;
     legend {
       transform: translateX(-2rem);
       font-size: 2rem;
@@ -36,7 +42,7 @@
       border-radius: 10px;
       padding: 0.5rem;
       font-size: 1rem;
-
+      width: 100%;
       &.dark {
         background-color: rgba(var.$DarkText, $alpha: 0.1);
         color: var.$DarkText;

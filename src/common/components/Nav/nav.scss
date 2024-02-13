@@ -149,7 +149,7 @@
       z-index: 1;
       width: 50%;
       height: 85px;
-      font-size: 1.5rem;
+      font-size: clamp(1rem, 3.5vw, 1.5rem);
       font-weight: 100;
       &.active {
         font-weight: bold;
