@@ -1,10 +1,10 @@
 @use "../../styles/variables.scss" as var;
 main {
   min-height: 100vh;
-  .pmf-tableWrapper {
-    width: 100%;
+  section.pmf-tableWrapper {
     opacity: 0;
     animation: toShow 0.5s forwards;
+    padding: 0;
   }
   header.pmf-tableHeader {
     background-color: none;
