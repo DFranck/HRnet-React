@@ -11,10 +11,7 @@ main {
     .pmf-tableFilter-label,
     .pmf-tableLength-label {
       font-size: 1rem;
-      display: flex;
-      align-items: center;
       select#pmf-tableLength-select {
-        margin: 0 1rem;
         border: 2px solid transparent;
         border-radius: 10px;
         padding: 0.5rem;
@@ -42,7 +39,6 @@ main {
   }
   .pmf-tableBody-cell {
     border-top: none;
-    padding: 0.75rem;
     opacity: 0.5;
     animation: toShow 0.5s forwards;
     &.pmf-tableBody-cell-noData {
