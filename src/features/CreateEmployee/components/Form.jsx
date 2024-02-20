@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Input } from "../../../common/components/Input/input.jsx";
+import { Input } from "../../../common/components/Input/Input.jsx";
 import {
   updateCity,
   updateDateOfBirth,
