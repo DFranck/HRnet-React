@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addEmployee, setShowModal } from "../createEmployeeSlice";
 import { resetForm } from "../formInputsSlice.jsx";
-import "./createEmployeeBtn.scss";
+import "./CreateEmployeeBtn.scss";
 
 export const CreateEmployeeBtn = () => {
   const dispatch = useDispatch();
