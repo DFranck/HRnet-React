@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { ThemeBtn } from "../../../features/Theme/components/ThemeBtn.jsx";
-import "./Header.scss";
+import "./header.scss";
 export const Header = () => {
   const theme = useSelector((state) => state.theme.theme);
   return (
